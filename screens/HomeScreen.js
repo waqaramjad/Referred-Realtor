@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
-
+import Nav from './NavBar'
 
 import { MonoText } from '../components/StyledText';
 
@@ -42,24 +42,8 @@ export default class HomeScreen extends React.Component {
     }
     return (
       <View style={styles.container}>
-       <Container>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name='arrow-back' />
-              <Text>Back</Text>
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right>
-            <Button transparent>
-              <Text>Cancel</Text>
-            </Button>
-          </Right>
-        </Header>
-      </Container>
+      <Nav/>
+      
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
             <Image

@@ -9,8 +9,8 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
-
+import { Container, Header, Left, Item, Input,Body, Right, Button, Icon, Title } from 'native-base';
+import styles from './styles/style'
 
 import { MonoText } from '../components/StyledText';
 
@@ -42,11 +42,11 @@ export default class Nav extends React.Component {
     }
     return (
        <Container>
-        <Header>
+        <Header style={styles.mainNav}>
           <Left>
             <Button transparent>
               <Icon name='arrow-back' />
-              <Text>Back</Text>
+              
             </Button>
           </Left>
           <Body>
@@ -54,15 +54,26 @@ export default class Nav extends React.Component {
           </Body>
           <Right>
             <Button transparent>
-              <Text>Cancel</Text>
+              <Icon name='notifications' />
+              {/* <Text>Cancel</Text> */}
             </Button>
           </Right>
+        </Header>
+        <Header searchBar rounded>
+          <Item>
+            <Icon name="ios-search" />
+            <Input placeholder="Search" />
+            <Icon name="ios-people" />
+          </Item>
+          <Button transparent>
+            <Text>Search</Text>
+          </Button>
         </Header>
       </Container>
   
     );
   }
-
+}
 
 
  
