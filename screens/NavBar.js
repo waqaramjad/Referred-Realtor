@@ -40,17 +40,23 @@ export default class Nav extends React.Component {
     if (this.state.loading) {
       return <Expo.AppLoading />;
     }
+    console.log(this.props)
     return (
        <View>
         <Header style={styles.mainNav}>
           <Left>
+
+         
             <Button transparent>
+            {/* {
+this.props.ScreenShow &&
               <Icon name='arrow-back' />
+            } */}
               
             </Button>
           </Left>
           <Body>
-            <Title>Header</Title>
+            <Title>{this.props.ScreenName}</Title>
           </Body>
           <Right>
             <Button transparent>
