@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform } from 'react-native';
+import { Platform , Image } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
@@ -12,16 +12,12 @@ const HomeStack = createStackNavigator({
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  // tabBarLabel: '',
+  title: null , 
+  showLabel: false,
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
+    <Image style={{ width: 50, height: 50 }} 
+    source={require('../assets/bottomBarIcons/activity.jpeg')} />
   ),
 };
 
@@ -57,4 +53,8 @@ export default createBottomTabNavigator({
   SettingsStack,
   LinksStack,
   HomeStack,
-});
+}
+, {
+  tabBarOptions: {
+    showLabel: false
+  }});
