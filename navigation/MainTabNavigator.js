@@ -7,6 +7,7 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import LocateScreen from '../screens/Locate';
+import CompnayScreen from '../screens/Companies';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -24,6 +25,17 @@ const LocateStack = createStackNavigator({
 });
 
 LocateStack.navigationOptions = {
+ 
+  tabBarIcon: ({ focused }) => (
+    <Image style={{ width: 50, height: 50 }} 
+    source={require('../assets/bottomBarIcons/locate.jpeg')} />
+  ),
+};
+const CompnayStack = createStackNavigator({
+  Compnay: CompnayScreen,
+});
+
+CompnayStack.navigationOptions = {
  
   tabBarIcon: ({ focused }) => (
     <Image style={{ width: 50, height: 50 }} 
@@ -54,10 +66,11 @@ SettingsStack.navigationOptions = {
 };
 
 export default createBottomTabNavigator({
+  CompnayStack ,
   SettingsStack,
   LinksStack,
   HomeStack,
-  LocateStack
+
 }
 , {
   tabBarOptions: {

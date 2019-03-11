@@ -14,7 +14,7 @@ import Nav from './NavBar'
 
 import { MonoText } from '../components/StyledText';
 
-export default class Locate extends React.Component {
+export default class Companies  extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -46,7 +46,33 @@ export default class Locate extends React.Component {
       <Nav ScreenName ='Message' ScreenShow={true}/>
       {/* <Header /> */}
       <Content>
+
+          <Card>
+              <CardItem>
+                  <Left/>
+<Body>
+
+<Thumbnail source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }} style={{height: 180, width: 180 , marginLeft:'-5%'}} />
+
+</Body>
+                  <Right/>
+
+              </CardItem>
+              <CardItem >
+                <View>
+<Text style={styles.NameLabel}> 
+
+ABD Builders
+</Text>
+                </View>
+
+              </CardItem>
+          </Card>
+          
       <List>
+      <ListItem itemDivider>
+              <Text>Members</Text>
+            </ListItem>
             <ListItem avatar>
               <Left>
                 <Thumbnail source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }} />
@@ -137,4 +163,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#2e78b7',
   },
+  NameLabel : {
+    fontSize: 30,
+    textAlign: 'center' , 
+    marginLeft :'40%'
+  }
 });
