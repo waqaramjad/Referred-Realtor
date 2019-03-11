@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import LocateScreen from '../screens/Locate';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -16,6 +17,17 @@ HomeStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <Image style={{ width: 50, height: 50 }} 
     source={require('../assets/bottomBarIcons/activity.jpeg')} />
+  ),
+};
+const LocateStack = createStackNavigator({
+  Locate: LocateScreen,
+});
+
+LocateStack.navigationOptions = {
+ 
+  tabBarIcon: ({ focused }) => (
+    <Image style={{ width: 50, height: 50 }} 
+    source={require('../assets/bottomBarIcons/locate.jpeg')} />
   ),
 };
 
@@ -45,6 +57,7 @@ export default createBottomTabNavigator({
   SettingsStack,
   LinksStack,
   HomeStack,
+  LocateStack
 }
 , {
   tabBarOptions: {
