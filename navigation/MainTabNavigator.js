@@ -12,9 +12,7 @@ const HomeStack = createStackNavigator({
 });
 
 HomeStack.navigationOptions = {
-  // tabBarLabel: '',
-  title: null , 
-  showLabel: false,
+ 
   tabBarIcon: ({ focused }) => (
     <Image style={{ width: 50, height: 50 }} 
     source={require('../assets/bottomBarIcons/activity.jpeg')} />
@@ -26,12 +24,9 @@ const LinksStack = createStackNavigator({
 });
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
-    />
+    <Image style={{ width: 50, height: 50 }} 
+    source={require('../assets/bottomBarIcons/message.jpeg')} />
   ),
 };
 
@@ -40,12 +35,9 @@ const SettingsStack = createStackNavigator({
 });
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-    />
+    <Image style={{ width: 50, height: 50 }} 
+    source={require('../assets/bottomBarIcons/contact.jpeg')} />
   ),
 };
 
@@ -56,5 +48,9 @@ export default createBottomTabNavigator({
 }
 , {
   tabBarOptions: {
-    showLabel: false
+    showLabel: false  , 
+    style: {
+      
+      height: 50,
+  },
   }});
