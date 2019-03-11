@@ -52,7 +52,7 @@ export default class Companies  extends React.Component {
                   <Left/>
 <Body>
 
-<Thumbnail source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }} style={{height: 180, width: 180 , marginLeft:'-5%'}} />
+<Thumbnail source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }} style={{height: 180, width: 180 , marginLeft:'-40%'}} />
 
 </Body>
                   <Right/>
@@ -166,6 +166,6 @@ const styles = StyleSheet.create({
   NameLabel : {
     fontSize: 30,
     textAlign: 'center' , 
-    marginLeft :'40%'
+    marginLeft :'30%'
   }
 });
