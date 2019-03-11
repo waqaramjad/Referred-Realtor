@@ -59,11 +59,11 @@ export default class Nav extends React.Component {
             </Button>
           </Right>
         </Header>
-        <Header searchBar rounded>
+        <Header searchBar rounded style={{backgroundColor:'white'}}>
           <Item>
             <Icon name="ios-search" />
             <Input placeholder="Search" />
-            <Icon name="ios-people" />
+            <Icon name="mic" />
           </Item>
           <Button transparent>
             <Text>Search</Text>
