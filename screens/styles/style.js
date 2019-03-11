@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default  StyleSheet.create({
     mainNav : {
-        backgroundColor : '#0F91DC' ,
+        backgroundColor : '#65c296' ,
 
     }, 
         //  container : {
