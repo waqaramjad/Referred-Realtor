@@ -41,7 +41,7 @@ export default class Nav extends React.Component {
       return <Expo.AppLoading />;
     }
     return (
-       <Container>
+       <View>
         <Header style={styles.mainNav}>
           <Left>
             <Button transparent>
@@ -69,7 +69,7 @@ export default class Nav extends React.Component {
             <Text>Search</Text>
           </Button>
         </Header>
-      </Container>
+      </View>
   
     );
   }
