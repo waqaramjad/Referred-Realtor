@@ -9,6 +9,10 @@ import SettingsScreen from '../screens/SettingsScreen';
 import LocateScreen from '../screens/Locate';
 import CompnayScreen from '../screens/Companies';
 
+navigationOptions = {
+  header : null
+}
+
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });
@@ -66,10 +70,10 @@ SettingsStack.navigationOptions = {
 };
 
 export default createBottomTabNavigator({
+  HomeStack,
   CompnayStack ,
   SettingsStack,
   LinksStack,
-  HomeStack,
 
 }
 , {
