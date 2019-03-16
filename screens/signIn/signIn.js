@@ -47,15 +47,20 @@ export default class SignIn extends React.Component {
       <Container style={{backgroundColor : '#65c296'}}>
       {/* <Nav ScreenName ='Activity Feed' ScreenShow={false} /> */}
       {/* <Header /> */}
+
       <Content>
+      <View style={styles.mianView}>
         <Text style={styles.login}>Login</Text>
+        <View  style={styles.InterternalView}>
+
+       
 
         <Form>
-            <Item floatingLabel>
-              <Label style={styles.textFBandLog}>Username</Label>
+            <Item stackedLabel>
+              <Label style={styles.textFBandLog}>Email</Label>
               <Input />
             </Item>
-            <Item floatingLabel last>
+            <Item stackedLabel last>
               <Label style={styles.textFBandLog}>Password</Label>
               <Input />
             </Item>
@@ -64,21 +69,26 @@ export default class SignIn extends React.Component {
           <View >
 
 
-          <Text style={{justifyContent: "flex-end" , textAlign: 'right' , marginRight : '6%'}}>Forget Password</Text>
+          <Text style={{justifyContent: "flex-end" , textAlign: 'right' , marginRight : '6%', color :'white'}}>Forget Password</Text>
       <View style={{marginTop : '15%'}} >
 
-          <Button block style={styles.FbAndLogBtn}>
+          <Button block bordered light style={styles.FbAndLogBtn}>
             <Text style={styles.textForFband}>Login</Text>
           </Button>
           </View>
 
           <View>
-            <Text >New User ? Sign Up</Text>
-            <Button block style={styles.FbAndLogBtn} onPress={()=>{navigate("tab")}}>
-            <Text style={styles.textForFband}>Facebook</Text>
+            <View>
+
+            <Text style={{  textAlign: 'center',color :'white' , marginLeft : "20%" ,marginTop : '3%' , marginBottom : '6%'  }} >New User ? Sign Up</Text>
+            </View>
+            <Button block  style={{ backgroundColor : 'white'}} onPress={()=>{navigate("tab")}}>
+            <Text style={{color : '#65c296' , backgroundColor : 'white'}}>Facebook</Text>
           </Button>
           </View>
        </View>
+       </View>
+ </View>
       </Content>
     </Container>
  
@@ -97,7 +107,7 @@ const styles = StyleSheet.create({
     color: '#2e78b7',
   },
 login :{
-  fontSize : 25 , 
+  fontSize :  30, 
   color : 'white'
 } , 
 forget :{
@@ -107,10 +117,17 @@ textFBandLog :{
   color : 'white'
 } , 
 FbAndLogBtn : {
-  backgroundColor : 'white'
+  backgroundColor : '#65c296' , 
+  // border : '1px solid  white'
 } ,  
 textForFband : {
-  color : '#65c296'
+  color : 'white'
+} , 
+mianView : {
+margin : 22
+} , 
+InterternalView : {
+  // marginTop : '3%'
 }
 
 
