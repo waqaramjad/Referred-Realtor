@@ -8,6 +8,8 @@ import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import LocateScreen from '../screens/Locate';
 import CompnayScreen from '../screens/Companies';
+// import Icon from ''
+import { Container, Header,Icon ,  Left, Body,Form, Item, Input, Label , Right, Button, Title ,  Content, Card, CardItem, Thumbnail,} from 'native-base';
 
 navigationOptions = {
   header : null
@@ -21,7 +23,7 @@ HomeStack.navigationOptions = {
  
   tabBarIcon: ({ focused }) => (
     <Image style={{ width: 50, height: 50 }} 
-    source={require('../assets/bottomBarIcons/activity.jpeg')} />
+    source={require('../assets/bottomBarIcons/hamburg.png')} />
   ),
 };
 const LocateStack = createStackNavigator({
@@ -42,8 +44,8 @@ const CompnayStack = createStackNavigator({
 CompnayStack.navigationOptions = {
  
   tabBarIcon: ({ focused }) => (
-    <Image style={{ width: 50, height: 50 }} 
-    source={require('../assets/bottomBarIcons/locate.jpeg')} />
+    <Image style={{ width: 45, height: 45 }} 
+    source={require('../assets/bottomBarIcons/location.png')} />
   ),
 };
 
@@ -53,8 +55,9 @@ const LinksStack = createStackNavigator({
 
 LinksStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
-    <Image style={{ width: 50, height: 50 }} 
-    source={require('../assets/bottomBarIcons/message.jpeg')} />
+    <Image style={{ width: 32, height: 32 }} 
+    source={require('../assets/bottomBarIcons/messge.png')} />
+    // <Icon active name="hamburger" />
   ),
 };
 
@@ -64,8 +67,8 @@ const SettingsStack = createStackNavigator({
 
 SettingsStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
-    <Image style={{ width: 50, height: 50 }} 
-    source={require('../assets/bottomBarIcons/contact.jpeg')} />
+    <Image style={{ width: 33, height: 33 }} 
+    source={require('../assets/bottomBarIcons/cntct.png')} />
   ),
 };
 
@@ -81,6 +84,7 @@ export default createBottomTabNavigator({
     showLabel: false  , 
     style: {
       
-      height: 50,
+      height: 50, 
+      // backgroundColor : '#65c296'
   },
   }});

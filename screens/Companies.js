@@ -67,7 +67,7 @@ export default class Companies  extends React.Component {
     return (
       // <View style={styles.container}>
       <Container>
-      <Nav ScreenName ='Message' ScreenShow={true}/>
+      <Nav ScreenName ='Locate' ScreenShow={true}/>
       {/* <Header /> */}
       <Content>
 
