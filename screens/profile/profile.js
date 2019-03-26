@@ -107,7 +107,8 @@ export default class Profile extends Component {
           
            <View >
 
-           <Thumbnail  large source={{uri: "https://kathleenhalme.com/images/humans-clipart-circle-person.png"}} />
+           {/* <Thumbnail source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }} style={styles.imageSize} /> */}
+           <Thumbnail source={{ uri: 'https://girlinthegarage.net/wp-content/uploads/2015/03/IMG_4790-jen-profile-0215-round.png' }} style={styles.imageSize} />
            </View>
            
 
@@ -124,7 +125,7 @@ export default class Profile extends Component {
           </Right>
          </CardItem>
       </Card>
-      <Card style={styles.centerContent}>
+      {/* <Card style={styles.centerContent}>
             <CardItem header>
               <Text  style ={styles.titleText}>Notification Area</Text>
             </CardItem>
@@ -136,37 +137,36 @@ export default class Profile extends Component {
               </Body>
             </CardItem>
            
-         </Card>
+         </Card> */}
          <Card >
          <CardItem header>
             {/* <Left/> */}
             <Body style={styles.centerContent}>
-            <Text style ={styles.titleText}> Details </Text>
+            <Text style ={styles.titleText}> Bio </Text>
             </Body>
             </CardItem>
             <CardItem  >
               <Body style={styles.bodyContent}>
-                <Text> First Name : Mike  </Text>
-                <Text> Last Name : Begs  </Text>
+                <Text> Name : Senita Zen </Text>
+                <Text> Location : Canada  </Text>
+                <Text> Experience : 8 years </Text>
                 <Text> Email Adress :xyz@gmail.com </Text>
                   {/* <Text> Billing info  : {this.state.billINfo} </Text> */}
                 {/* <Text> Credit Card No :{this.state.CardNo}   </Text> */}
-                <Text> Company Name  : XYZ    </Text>
+                <Text> Company Name  : MS    </Text>
+                <Text> Snapchat username  :  Senita345   </Text>
+                <Text> Skype username  :  Senita345   </Text>
+                {/* <Text> Skype username  :  Senita345   </Text> */}
               </Body>
             </CardItem>
            
          </Card>
-         <Card >
+         {/* <Card > */}
          
            
-            <CardItem header>
-            {/* <Left/> */}
-            <Body style={styles.centerContent}>
-            <Text style ={styles.titleText}> Contact us  </Text>
-            </Body>
-            </CardItem>
            
-           <CardItem>
+           
+           {/* <CardItem>
              <Body>
              <Item  >
             <Input placeholder='Enter your message here '/>
@@ -180,8 +180,8 @@ export default class Profile extends Component {
 
 
              </Body>
-           </CardItem>
-         </Card>
+           </CardItem> */}
+         {/* </Card> */}
      </Content>
            
             
@@ -229,6 +229,10 @@ export default class Profile extends Component {
       fontSize: 15,
       fontWeight: 'bold',
     },
+    imageSize : {
+      height :140 , 
+      width : 140
+    }
 
 
   });
