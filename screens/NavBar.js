@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-import { Container, Header, Left, Item, Input,Body, Right, Button, Icon, Title ,Thumbnail} from 'native-base';
+import { Container, Header, Left, Item, Card, CardItem, Input,Body, Right, Button, Icon, Title ,Thumbnail} from 'native-base';
 import styles1 from './styles/style'
 import Example from './modal/model'
 import { MonoText } from '../components/StyledText';
@@ -39,12 +39,33 @@ export default class Nav extends React.Component {
     );
 
     renderModalContent = () => (
-      <View style={styles.modalContent}>
-        <Text>Hello!</Text>
-        <Image
+      <View >
+        {/* <Text>Hello!</Text> */}
+       
+            <Card>
+            
+            <CardItem>
+              {/* <Body> */}
+              <Image
             source={require('../assets/images/QRCode.png')}
+            style={{height : 350 , width : 350}} 
+
           />
-        {this.renderButton("Close", () => this.setState({ visibleModal: null }))}
+              {/* </Body> */}
+            </CardItem>
+            <CardItem footer>
+            <Left/>
+            <Body/>
+            <Right>
+
+            <Button iconLeft light>
+            <Icon name='share' />
+            <Text>Share</Text>
+          </Button>
+            </Right>
+            </CardItem>
+         </Card>
+        {/* {this.renderButton("Close", () => this.setState({ visibleModal: null }))} */}
       </View>
     );
   async componentWillMount() {
@@ -68,12 +89,6 @@ export default class Nav extends React.Component {
     return (
        <View>
         <Header style={styles1.mainNav}>
-        {/* <View style={styles.container}> */}
-        
-        {/* {this.renderButton("Modal that can be closed on backdrop press", () =>
-          this.setState({ visibleModal: 6 }),
-        )} */}
-       
         
         <Modal
           isVisible={this.state.visibleModal === 6}
@@ -86,15 +101,10 @@ export default class Nav extends React.Component {
           <Left>
 
          
-            {/* <Thumbnail onPress={()=>{this.props.navigator.push({title: 'Home'})}} source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }}  /> */}
-            {/* <View onPress={()=>{ alert('sdf') }}> */}
             <TouchableHighlight onPress={ () =>     navigate("Drawer")
  }>
- {/* <TouchableHighlight onPress={ () =>    alert('sdf') */}
             <Thumbnail  source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }}  />
            </TouchableHighlight>
-            {/* </View> */}
-                {/* </Left> */}
           </Left>
           <Body>
             <Title>{this.props.ScreenName}</Title>
