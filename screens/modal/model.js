@@ -18,6 +18,10 @@ export default class Example extends Component {
     visibleModal: null,
   };
 
+
+  componentWillMount(){
+      alert('this.props.modalValue')
+  }
   renderButton = (text, onPress) => (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.button}>
