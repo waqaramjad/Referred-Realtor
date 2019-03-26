@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  TouchableHighlight ,
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
@@ -40,14 +41,24 @@ export default class Nav extends React.Component {
     if (this.state.loading) {
       return <Expo.AppLoading />;
     }
+    console.log('this.props')
     console.log(this.props)
+    const { navigate  , state} = this.props.navigation; 
+
     return (
        <View>
         <Header style={styles.mainNav}>
           <Left>
 
          
-            <Thumbnail source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }} />
+            {/* <Thumbnail onPress={()=>{this.props.navigator.push({title: 'Home'})}} source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }}  /> */}
+            {/* <View onPress={()=>{ alert('sdf') }}> */}
+            <TouchableHighlight onPress={ () =>     navigate("Drawer")
+ }>
+ {/* <TouchableHighlight onPress={ () =>    alert('sdf') */}
+            <Thumbnail  source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }}  />
+           </TouchableHighlight>
+            {/* </View> */}
                 {/* </Left> */}
           </Left>
           <Body>

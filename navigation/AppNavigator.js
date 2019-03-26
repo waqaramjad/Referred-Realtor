@@ -1,18 +1,32 @@
-import React from 'react';
+  import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
-import {createStackNavigator  } from 'react-navigation';
+import {createStackNavigator ,createDrawerNavigator } from 'react-navigation';
 import SignIn from '../screens/signIn/signIn'
 import Profile from '../screens/profile/profile'
+import Nav from '../screens/NavBar'
+import Example from '../screens/modal/model'
 
+const MyDrawerNavigator = createDrawerNavigator({
+  SignIn: {
+    screen: SignIn,
+  },
+  Profile: {
+    screen: Profile,
+  },
+});
 
 const App = createStackNavigator({
-  Profile : {screen : Profile},
-  SignIn: {screen: SignIn},
+  Example : {screen : Example},
   tab : {screen : MainTabNavigator , navigationOptions :({
     header : null
   })} , 
+  Nav : {screen : Nav},
+  Profile : {screen : Profile},
+  SignIn: {screen: SignIn},
+  Drawer : {screen : MyDrawerNavigator},
+
  
  //  Login: {screen: Login},
 });

@@ -8,6 +8,8 @@ import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import LocateScreen from '../screens/Locate';
 import CompnayScreen from '../screens/Companies';
+import Nav from '../screens/NavBar'
+
 // import Icon from ''
 import { Container, Header,Icon ,  Left, Body,Form, Item, Input, Label , Right, Button, Title ,  Content, Card, CardItem, Thumbnail,} from 'native-base';
 

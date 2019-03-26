@@ -43,7 +43,7 @@ export default class HomeScreen extends React.Component {
     return (
       // <View style={styles.container}>
       <Container>
-      <Nav ScreenName ='Activity Feed' ScreenShow={false} />
+      <Nav ScreenName ='Activity Feed' ScreenShow={false} navigation={this.props.navigation} />
       {/* <Header /> */}
       <Content>
         <Card>
