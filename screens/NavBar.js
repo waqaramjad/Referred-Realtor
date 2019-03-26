@@ -47,15 +47,6 @@ export default class Nav extends React.Component {
           <Left>
 
          
-            {/* <Button transparent> */}
-            {/* {
-this.props.ScreenShow &&
-              <Icon name='arrow-back' />
-            } */}
-              
-            {/* </Button> */}
-
-            {/* <Left> */}
             <Thumbnail source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }} />
                 {/* </Left> */}
           </Left>
@@ -65,7 +56,6 @@ this.props.ScreenShow &&
           <Right>
             <Button transparent>
               <Icon name='notifications' />
-              {/* <Text>Cancel</Text> */}
             </Button>
           </Right>
         </Header>
