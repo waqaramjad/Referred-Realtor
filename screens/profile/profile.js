@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, View,AppRegistry, FlatList,  TouchableOpacity, Dimensions, StatusBar, Image, Text, Modal } from 'react-native';
-import firebase from 'firebase';
-import { Navigator } from 'react-native-deprecated-custom-components'
-import {Actions} from "react-native-router-flux";
-//import {ButtonRoundBlue, IconInput}  from "@controls";
+// import firebase from 'firebase';
+// import { Navigator } from 'react-native-deprecated-custom-components'
+// import {Actions} from "react-native-router-flux";
 import {  Item, Input ,  Accordion , Container, Header,  Icon , Content, Card, CardItem,Right,Thumbnail ,  Left ,  Title ,   Button ,  Body } from "native-base";
 import Expo from "expo";
 import gstyles from '../styles/style'
@@ -36,23 +35,23 @@ export default class Profile extends Component {
 
     const { state, navigate } = this.props.navigation;
 
-    myUId = state.params.UserId
+    // myUId = state.params.UserId
     myThis = this
-    firebase.database().ref('users/'+myUId+'/').on('value' , function(snapshot) {
-      console.log(snapshot.val())
-      var myProfileData = snapshot.val()
+    // firebase.database().ref('users/'+myUId+'/').on('value' , function(snapshot) {
+    //   console.log(snapshot.val())
+    //   var myProfileData = snapshot.val()
 
-      myThis.setState({
-        Fname : myProfileData.Fname ,
-        lName : myProfileData.lName, 
-        CompName : myProfileData.CompName , 
+    //   myThis.setState({
+    //     Fname : myProfileData.Fname ,
+    //     lName : myProfileData.lName, 
+    //     CompName : myProfileData.CompName , 
 
-        mail : myProfileData.mail ,
-        pass : myProfileData.pass , 
-        billINfo : myProfileData.billINfo , 
-        CardNo : myProfileData.CardNo
-      })
-    })
+    //     mail : myProfileData.mail ,
+    //     pass : myProfileData.pass , 
+    //     billINfo : myProfileData.billINfo , 
+    //     CardNo : myProfileData.CardNo
+    //   })
+    // })
   }
   async componentWillMount() {
     await Expo.Font.loadAsync({
@@ -66,17 +65,17 @@ export default class Profile extends Component {
 
  
 
-  check= () =>{
-console.log('check')
-    alert('hy')
+//   check= () =>{
+// console.log('check')
+//     alert('hy')
   
-  }
+//   }
   
   
     render() {
-      if (this.state.loading) {
-        return <Expo.AppLoading />;
-      }
+    //   if (this.state.loading) {
+    //     return <Expo.AppLoading />;
+    //   }
 
       const { navigate } = this.props.navigation; 
       return (
