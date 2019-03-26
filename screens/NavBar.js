@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-import { Container, Header, Left, Item, Input,Body, Right, Button, Icon, Title } from 'native-base';
+import { Container, Header, Left, Item, Input,Body, Right, Button, Icon, Title ,Thumbnail} from 'native-base';
 import styles from './styles/style'
 
 import { MonoText } from '../components/StyledText';
@@ -47,13 +47,17 @@ export default class Nav extends React.Component {
           <Left>
 
          
-            <Button transparent>
+            {/* <Button transparent> */}
             {/* {
 this.props.ScreenShow &&
               <Icon name='arrow-back' />
             } */}
               
-            </Button>
+            {/* </Button> */}
+
+            {/* <Left> */}
+            <Thumbnail source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }} />
+                {/* </Left> */}
           </Left>
           <Body>
             <Title>{this.props.ScreenName}</Title>
