@@ -44,7 +44,7 @@ export default class SignUp extends React.Component {
     console.log(this.props)
     return (
       // <View style={styles.container}>
-      <Container style={{backgroundColor : '#65c296'}}>
+      <Container >
       {/* <Nav ScreenName ='Activity Feed' ScreenShow={false} /> */}
       {/* <Header /> */}
 
@@ -56,86 +56,89 @@ export default class SignUp extends React.Component {
        
 
         <Form>
-            <Item stackedLabel>
+            <Item floatingLabel>
               <Label style={styles.textFBandLog}>First Name</Label>
               <Input />
             </Item>
-            <Item stackedLabel last>
+            <Item floatingLabel last>
               <Label style={styles.textFBandLog}>Last Name</Label>
               <Input />
             </Item>
-            <Item stackedLabel last>
+            <Item floatingLabel last>
               <Label style={styles.textFBandLog}>User Name</Label>
               <Input />
             </Item>
-            <Item stackedLabel last>
+            <Item floatingLabel last>
               <Label style={styles.textFBandLog}>Location</Label>
               <Input />
             </Item>
-            <Item stackedLabel last>
+            <Item floatingLabel last>
               <Label style={styles.textFBandLog}>Year Of Experience</Label>
               <Input />
             </Item>
           </Form>
 
           
-            <Text>Gender</Text>
+            <Text style={styles.subHeading}>Gender</Text>
           <ListItem selected={true}>
             {/* <Left> */}
             <Radio
-                color={"white"}
+                color={"black"}
                 selectedColor={"black"}
+                style={styles.radio}
+
                 // selected={true}
                 />
               <Text>Male</Text>
             {/* </Left> */}
             {/* <Right> */}
             <Radio
-                color={"white"}
+                color={"black"}
                 selectedColor={"black"}
+                style={styles.radio}
                 // selected={true}
                 />
               <Text>Female</Text>
             {/* </Right> */}
           </ListItem>
           
-                <Text>Type of Raelity</Text>
+                <Text style={styles.subHeading}> Type of Raelity</Text>
 
                 <ListItem>
-            <CheckBox  />
+            <CheckBox style={styles.check} />
             <Body>
               <Text>Residential</Text>
             </Body>
           </ListItem>
                 <ListItem>
-            <CheckBox checked={true} />
+            <CheckBox checked={true}  style={styles.check} />
             <Body>
               <Text>Commercial</Text>
             </Body>
           </ListItem>
                 <ListItem>
-            <CheckBox />
+            <CheckBox style={styles.check}/>
             <Body>
-              <Text>Agriculture</Text>
+              <Text >Agriculture</Text>
             </Body>
           </ListItem>
                 <ListItem>
-            <CheckBox checked={true} />
+            <CheckBox checked={true} style={styles.check} />
             <Body>
-              <Text>Industrial</Text>
+              <Text > Industrial</Text>
             </Body>
           </ListItem>
                 <ListItem>
-            <CheckBox  />
+            <CheckBox style={styles.check} />
             <Body>
-              <Text>Land</Text>
+              <Text >Land</Text>
             </Body>
           </ListItem>
           <View >
 
           <Card>
             <CardItem header>
-              <Text>Contact</Text>
+              <Text style={styles.subHeading}>Contact</Text>
             </CardItem>
             <CardItem>
               <Body>
@@ -159,7 +162,7 @@ export default class SignUp extends React.Component {
          {/* Social Media  */}
           <Card>
             <CardItem header>
-              <Text>Social Media </Text>
+              <Text style={styles.subHeading}> Social Media </Text>
             </CardItem>
             <CardItem>
               <Body>
@@ -188,18 +191,18 @@ export default class SignUp extends React.Component {
       <View style={{marginTop : '15%'}} >
 
           <Button block bordered light style={styles.FbAndLogBtn}>
-            <Text style={styles.textForFband}>Login</Text>
+            <Text style={styles.textForFband}>Sign Up</Text>
           </Button>
           </View>
 
           <View>
-            <View>
+            {/* <View>
 
             <Text style={{  textAlign: 'center',color :'white' , marginLeft : "20%" ,marginTop : '3%' , marginBottom : '6%'  }} >New User ? Sign Up</Text>
-            </View>
-            <Button block  style={{ backgroundColor : 'white'}} onPress={()=>{navigate("tab")}}>
+            </View> */}
+            {/* <Button block  style={{ backgroundColor : 'white'}} onPress={()=>{navigate("tab")}}>
             <Text style={{color : '#65c296' , backgroundColor : 'white'}}>Facebook</Text>
-          </Button>
+          </Button> */}
           </View>
        </View>
        </View>
@@ -223,13 +226,13 @@ const styles = StyleSheet.create({
   },
 login :{
   fontSize :  30, 
-  color : 'white'
+  color : 'black'
 } , 
 forget :{
   
 } , 
 textFBandLog :{
-  color : 'white'
+  color : 'black'
 } , 
 FbAndLogBtn : {
   backgroundColor : '#65c296' , 
@@ -243,7 +246,19 @@ margin : 22
 } , 
 InterternalView : {
   // marginTop : '3%'
-}
+} , 
 
+subHeading :{
+  fontSize : 20,
+  marginTop : 7
+} , 
+radio : {
+  marginRight : 7 ,
+  marginLeft : 7
+
+} ,
+check : {
+  marginRight : 30
+}
 
 });
