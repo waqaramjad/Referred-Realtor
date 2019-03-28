@@ -140,15 +140,15 @@ export default class SignUp extends React.Component {
             <CardItem>
               <Body>
               <Item>
-            <Icon active name='home' />
+            <Icon active name='md-call' />
             <Input placeholder='Call'/>
           </Item>
               <Item>
-            <Icon active name='home' />
+            <Icon active name='mail' />
             <Input placeholder='Text Message'/>
           </Item>
               <Item>
-            <Icon active name='home' />
+            <Icon active name='md-mail' />
             <Input placeholder='Email'/>
           </Item>
               </Body>
@@ -156,24 +156,28 @@ export default class SignUp extends React.Component {
            
          </Card>
 
-         So
+         {/* Social Media  */}
           <Card>
             <CardItem header>
-              <Text>Contact</Text>
+              <Text>Social Media </Text>
             </CardItem>
             <CardItem>
               <Body>
               <Item>
-            <Icon active name='home' />
-            <Input placeholder='Call'/>
+            <Icon active name='logo-facebook' />
+            <Input placeholder='Facebook'/>
           </Item>
               <Item>
-            <Icon active name='home' />
-            <Input placeholder='Text Message'/>
+            <Icon active name='logo-instagram' />
+            <Input placeholder='Instagram'/>
           </Item>
               <Item>
-            <Icon active name='home' />
-            <Input placeholder='Email'/>
+            <Icon active name='logo-twitter' />
+            <Input placeholder='Twitter'/>
+          </Item>
+              <Item>
+            <Icon active name='logo-whatsapp' />
+            <Input placeholder="Whats App"/>
           </Item>
               </Body>
             </CardItem>
