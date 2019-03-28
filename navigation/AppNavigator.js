@@ -7,6 +7,7 @@ import SignIn from '../screens/signIn/signIn'
 import Profile from '../screens/profile/profile'
 import Nav from '../screens/NavBar'
 import Example from '../screens/modal/model'
+import SignUp from '../screens/SignUp/SignUp'
 
 const MyDrawerNavigator = createDrawerNavigator({
   SignIn: {
@@ -18,6 +19,7 @@ const MyDrawerNavigator = createDrawerNavigator({
 });
 
 const App = createStackNavigator({
+  SignUp : {screen : SignUp},
   tab : {screen : MainTabNavigator , navigationOptions :({
     header : null
   })} , 
