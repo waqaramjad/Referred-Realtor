@@ -133,6 +133,52 @@ export default class SignUp extends React.Component {
           </ListItem>
           <View >
 
+          <Card>
+            <CardItem header>
+              <Text>Contact</Text>
+            </CardItem>
+            <CardItem>
+              <Body>
+              <Item>
+            <Icon active name='home' />
+            <Input placeholder='Call'/>
+          </Item>
+              <Item>
+            <Icon active name='home' />
+            <Input placeholder='Text Message'/>
+          </Item>
+              <Item>
+            <Icon active name='home' />
+            <Input placeholder='Email'/>
+          </Item>
+              </Body>
+            </CardItem>
+           
+         </Card>
+
+         So
+          <Card>
+            <CardItem header>
+              <Text>Contact</Text>
+            </CardItem>
+            <CardItem>
+              <Body>
+              <Item>
+            <Icon active name='home' />
+            <Input placeholder='Call'/>
+          </Item>
+              <Item>
+            <Icon active name='home' />
+            <Input placeholder='Text Message'/>
+          </Item>
+              <Item>
+            <Icon active name='home' />
+            <Input placeholder='Email'/>
+          </Item>
+              </Body>
+            </CardItem>
+           
+         </Card>
 
           <Text style={{justifyContent: "flex-end" , textAlign: 'right' , marginRight : '6%', color :'white'}}>Forget Password</Text>
       <View style={{marginTop : '15%'}} >
