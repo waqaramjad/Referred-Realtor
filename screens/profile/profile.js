@@ -90,7 +90,11 @@ export default class Profile extends Component {
             </Button>
           </Left>
           <Body/>
-          <Right/>
+          <Right>
+          <Button transparent  onPress={()=>{alert('dfgdfg')}} >
+             <Text style={{color:'white',fontSize:15 }}>Edit</Text>
+            </Button>
+          </Right>
         </Header>
        <Content>
        <Card>
