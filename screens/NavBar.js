@@ -15,7 +15,6 @@ import styles1 from './styles/style'
 import Example from './modal/model'
 import { MonoText } from '../components/StyledText';
 import Modal from "react-native-modal";
-
 export default class Nav extends React.Component {
   static navigationOptions = {
     header: null,
@@ -101,8 +100,11 @@ export default class Nav extends React.Component {
           <Left>
 
          
-            <TouchableHighlight onPress={ () =>     navigate("Drawer")
- }>
+            <TouchableHighlight 
+//             onPress={ () =>     navigate("Drawer")
+//  }
+onPress={() => navigate("Drawer")}
+ >
             <Thumbnail  source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }}  />
            </TouchableHighlight>
           </Left>
