@@ -41,7 +41,6 @@ const App = createStackNavigator({
   Drawer : {screen : MyDrawerNavigator},
 
  
- //  Login: {screen: Login},
 });
 
 App.navigationOptions = {

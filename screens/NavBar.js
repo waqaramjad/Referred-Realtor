@@ -101,9 +101,9 @@ export default class Nav extends React.Component {
 
          
             <TouchableHighlight 
-//             onPress={ () =>     navigate("Drawer")
-//  }
-onPress={() => navigate("Drawer")}
+            onPress={ () =>     navigate("Profile")
+ }
+// onPress={() => navigate("Drawer")}
  >
             <Thumbnail  source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }}  />
            </TouchableHighlight>
