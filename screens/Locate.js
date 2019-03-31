@@ -43,7 +43,7 @@ export default class Locate extends React.Component {
     return (
       // <View style={styles.container}>
       <Container>
-      <Nav ScreenName ='Locate' ScreenShow={true}/>
+      <Nav ScreenName ='Locate' ScreenShow={true} navigation={this.props.navigation}/>
       {/* <Header /> */}
       <Content>
       <List>

@@ -88,7 +88,7 @@ export default class LinkScreen extends React.Component {
     return (
       // <View style={styles.container}>
       <Container>
-      <Nav ScreenName ='Message' ScreenShow={true}/>
+      <Nav ScreenName ='Message' ScreenShow={true} navigation={this.props.navigation}/>
       {/* <Header /> */}
       <Content>
       <List>

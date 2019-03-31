@@ -42,7 +42,7 @@ export default class SettingScreen extends React.Component {
     }
     return (
       <Container>
-      <Nav ScreenName ='CONTACTS' ScreenShow={true}/>
+      <Nav ScreenName ='CONTACTS' ScreenShow={true} navigation={this.props.navigation}/>
       <Content>
 
         <Card> 

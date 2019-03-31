@@ -10,14 +10,6 @@ import Example from '../screens/modal/model'
 import SignUp from '../screens/SignUp/SignUp'
 import Sidebar from '../screens/Drwaer/drawer'
 import Edit from '../screens/edit/edit'
-// const MyDrawerNavigator = createDrawerNavigator({
-//   SignIn: {
-//     screen: SignIn,
-//   },
-//   Profile: {
-//     screen: Profile,
-//   },
-// });
 
 const MyDrawerNavigator = createDrawerNavigator(
 	{

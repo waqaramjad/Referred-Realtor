@@ -15,12 +15,12 @@ export default class App extends React.Component {
           startAsync={this._loadResourcesAsync}
           onError={this._handleLoadingError}
           onFinish={this._handleFinishLoading}
-        />
+        /> 
       );
     } else {
       return (
         <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+          {Platform.OS === 'ios' && <StatusBar hidden={true} />|| Platform.OS === 'android' && <StatusBar hidden={true}/>}
           <AppNavigator />
         </View>
       );
@@ -60,3 +60,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+console.disableYellowBox = true;
