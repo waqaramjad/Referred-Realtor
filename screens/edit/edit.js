@@ -84,7 +84,7 @@ export default class Edit extends Component {
          <Left/>
          <Body/>
          <Right>
-         <Button transparent light>
+         <Button  light>
             <Text>Change Picture </Text>
           </Button>
           </Right>
