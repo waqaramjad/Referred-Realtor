@@ -91,7 +91,7 @@ export default class Profile extends Component {
           </Left>
           <Body/>
           <Right>
-          <Button transparent  onPress={()=>{alert('dfgdfg')}} >
+          <Button transparent  onPress={()=>{navigate("Edit")}} >
              <Text style={{color:'white',fontSize:15 }}>Edit</Text>
             </Button>
           </Right>
