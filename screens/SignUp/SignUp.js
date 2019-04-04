@@ -102,7 +102,7 @@ export default class SignUp extends React.Component {
             {/* </Right> */}
           </ListItem>
           
-                <Text style={styles.subHeading}> Type of Raelity</Text>
+                <Text style={styles.subHeading}> Type of Raelty</Text>
 
                 <ListItem>
             <CheckBox style={styles.check} />

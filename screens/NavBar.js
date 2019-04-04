@@ -58,7 +58,7 @@ export default class Nav extends React.Component {
             <Right>
 
             <Button iconLeft light>
-            <Icon name='share' />
+            <Icon name='share' style={{marginLeft : -2}}/>
             <Text>Share</Text>
           </Button>
             </Right>
@@ -113,7 +113,7 @@ export default class Nav extends React.Component {
           </Body>
           <Right>
             <Button transparent>
-              <Icon name='notifications' />
+              <Icon name='notifications' style={{marginRight : 7}}/>
               <Icon name='share' onPress={()=><Example modalValue={true}/> } />
             </Button>
           </Right>

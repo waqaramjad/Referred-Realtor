@@ -10,9 +10,6 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import { Container, Header, Left, Body,Form, Item, Input, Label , Right, Button, Icon, Title ,  Content, Card, CardItem, Thumbnail,} from 'native-base';
-// import Nav from './NavBar'
-
-// import { MonoText } from '../components/StyledText';
 
 export default class SignIn extends React.Component {
   static navigationOptions = {
@@ -69,7 +66,9 @@ export default class SignIn extends React.Component {
           <View >
 
 
-          <Text style={{justifyContent: "flex-end" , textAlign: 'right' , marginRight : '6%', color :'white'}}>Forget Password</Text>
+          <Text style={{justifyContent: "flex-end" , textAlign: 'right' , marginRight : '6%', color :'white'}}>Forgot Password</Text>
+      
+      
       <View style={{marginTop : '15%'}} >
 
           <Button block bordered light style={styles.FbAndLogBtn}>
@@ -80,7 +79,8 @@ export default class SignIn extends React.Component {
           <View>
             <View>
 
-            <Text style={{  textAlign: 'center',color :'white' , marginLeft : "20%" ,marginTop : '3%' , marginBottom : '6%'  }} >New User ? Sign Up</Text>
+            <Text onPress={()=>{this.props.navigation.navigate('SignUp')}} style={{  textAlign: 'center',color :'white' , marginLeft : "20%" ,marginTop : '3%' , marginBottom : '6%'  }} >New User ? Sign Up</Text>
+           
             </View>
             <Button block  style={{ backgroundColor : 'white'}} onPress={()=>{navigate("tab")}}>
             <Text style={{color : '#65c296' , backgroundColor : 'white'}}>Facebook</Text>
@@ -132,3 +132,4 @@ InterternalView : {
 
 
 });
+
