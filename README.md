@@ -1,32 +1,5 @@
 # Referred-Realtor
 
-## reading instruction for this file 
-1)  main heading donated by  ##
-2) sub heading donated by ###
-4) must read in the following sequence bellow is the sequence of section name and their sun name 
-
-  i) ## reading instruction for this file 
-	ii) ## reading instruction for this file 
-	iii) ## Development requirement
-	iv) ## Get Started
-	     -### Run on Android emulator
-			 -### Run on IOS simulator 
-	v) ## Run on Mobile 
-	vi) ## Facing any problem in installtion
-	   -### possible problem
-		 -### how you resolve or update me about errors 
-
-
-
-
-## Precautions
-1) active and good internet 
-2) your computer and the expo app must on the same internet 
-3) your computer work smoothly or not be slow  
-
-
-
-
 
 ## Development requirement
 
@@ -120,6 +93,10 @@ e) enjoy your project
  4) node version 
  5) npm version  
  
+ ## Precautions
+1) active and good internet 
+2) your computer and the expo app must on the same internet 
+3) your computer work smoothly or not be slow  
 
 
 
