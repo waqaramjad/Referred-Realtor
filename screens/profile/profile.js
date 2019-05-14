@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { StyleSheet, View,AppRegistry, FlatList,  TouchableOpacity, ImageBackground,Dimensions, StatusBar, Image, Text, Modal } from 'react-native';
+import { Tooltip } from 'react-native-elements';
 // import firebase from 'firebase';
 // import { Navigator } from 'react-native-deprecated-custom-components'
 // import {Actions} from "react-native-router-flux";
 import {  Item, Input ,  Accordion , Container, Header,  Icon , Content, Card, CardItem,Right,Thumbnail ,  Left ,  Title ,   Button ,  Body } from "native-base";
 import Expo from "expo";
 import gstyles from '../styles/style'
-
 var myUId = ''
 
 
@@ -70,6 +70,10 @@ export default class Profile extends Component {
           <Button transparent  onPress={()=>{navigate("Edit")}} >
              <Text style={{color:'white',fontSize:15 }}>Edit</Text>
             </Button>
+            <Tooltip popover={<Text>Flag as inappropriate</Text>}>
+  {/* <Text>Press me</Text> */}
+  <Icon name="dots-three-vertical" />
+</Tooltip>
           </Right>
         </Header>
        <Content>
