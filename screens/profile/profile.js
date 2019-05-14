@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View,AppRegistry, FlatList,  TouchableOpacity, Dimensions, StatusBar, Image, Text, Modal } from 'react-native';
+import { StyleSheet, View,AppRegistry, FlatList,  TouchableOpacity, ImageBackground,Dimensions, StatusBar, Image, Text, Modal } from 'react-native';
 // import firebase from 'firebase';
 // import { Navigator } from 'react-native-deprecated-custom-components'
 // import {Actions} from "react-native-router-flux";
@@ -37,21 +37,6 @@ export default class Profile extends Component {
 
     // myUId = state.params.UserId
     myThis = this
-    // firebase.database().ref('users/'+myUId+'/').on('value' , function(snapshot) {
-    //   console.log(snapshot.val())
-    //   var myProfileData = snapshot.val()
-
-    //   myThis.setState({
-    //     Fname : myProfileData.Fname ,
-    //     lName : myProfileData.lName, 
-    //     CompName : myProfileData.CompName , 
-
-    //     mail : myProfileData.mail ,
-    //     pass : myProfileData.pass , 
-    //     billINfo : myProfileData.billINfo , 
-    //     CardNo : myProfileData.CardNo
-    //   })
-    // })
   }
   async componentWillMount() {
     await Expo.Font.loadAsync({
@@ -64,18 +49,9 @@ export default class Profile extends Component {
 
 
  
-
-//   check= () =>{
-// console.log('check')
-//     alert('hy')
-  
-//   }
-  
   
     render() {
-    //   if (this.state.loading) {
-    //     return <Expo.AppLoading />;
-    //   }
+  
 
       const { navigate } = this.props.navigation; 
       return (
@@ -109,11 +85,23 @@ export default class Profile extends Component {
          <CardItem>
            <Body style={styles.centerContent}>
           
-           <View >
+           {/* <View >
 
-           {/* <Thumbnail source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }} style={styles.imageSize} /> */}
            <Thumbnail source={{ uri: 'https://girlinthegarage.net/wp-content/uploads/2015/03/IMG_4790-jen-profile-0215-round.png' }} style={styles.imageSize} />
-           </View>
+           </View> */}
+           {/* {{uri:'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'}} */}
+{/* <View style={styles.container}> */}
+{/* <View style={styles.container}> */}
+            <ImageBackground source =            {{uri:'https://amymorinlcsw.com/wp-content/uploads/2013/11/Amy-Morin-Mentally-Strong-People-Don27t-Do-1024x578.png'}}
+
+               style = {styles.backdrop}>
+              <View style = {styles.overlay}>
+    <Image style = {styles.logo} source = {{uri:'https://bioprotect.com/wp-content/uploads/2017/10/maya-profile-round.jpg'}} />
+                {/* <Text style = {styles.headline}>It should appear in front of the Background Image</Text> */}
+              </View>
+
+              </ImageBackground>
+    {/* </View> */}
            
 
 
@@ -236,7 +224,32 @@ export default class Profile extends Component {
     imageSize : {
       height :140 , 
       width : 140
-    }
+    } , 
 
+//  container: {
+//         flex: 1,
+//         alignItems: 'center',
+//       },
+      overlay: {
+        opacity: 0.5,
+        backgroundColor: '#000000'
+      },
+      logo: {
+        backgroundColor: 'rgba(0,0,0,0)',
+        width: 160,
+        height: 52
+      },
+      backdrop: {
+        // flex:1,
+        // flexDirection: 'column'
+        // width:'75%',
+        // height : '75%'
+      },
+      headline: {
+        fontSize: 18,
+        textAlign: 'center',
+        backgroundColor: 'rgba(0,0,0,0)',
+        color: 'white'
+      }
 
   });
