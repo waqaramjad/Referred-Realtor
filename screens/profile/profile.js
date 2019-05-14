@@ -86,8 +86,8 @@ export default class Profile extends Component {
          </Body>
          <Right/>
          </CardItem>
-         <CardItem>
-           <Body style={styles.centerContent}>
+         {/* <CardItem> */}
+           {/* <Body style={styles.centerContent}> */}
           
            {/* <View >
 
@@ -96,21 +96,38 @@ export default class Profile extends Component {
            {/* {{uri:'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'}} */}
 {/* <View style={styles.container}> */}
 {/* <View style={styles.container}> */}
-            <ImageBackground source =            {{uri:'https://amymorinlcsw.com/wp-content/uploads/2013/11/Amy-Morin-Mentally-Strong-People-Don27t-Do-1024x578.png'}}
+            {/* <ImageBackground source =            {{uri:'https://amymorinlcsw.com/wp-content/uploads/2013/11/Amy-Morin-Mentally-Strong-People-Don27t-Do-1024x578.png'}}
 
                style = {styles.backdrop}>
               <View style = {styles.overlay}>
     <Image style = {styles.logo} source = {{uri:'https://bioprotect.com/wp-content/uploads/2017/10/maya-profile-round.jpg'}} />
-                {/* <Text style = {styles.headline}>It should appear in front of the Background Image</Text> */}
               </View>
 
-              </ImageBackground>
+              </ImageBackground> */}
     {/* </View> */}
-           
+    <CardItem>
 
 
-           </Body>
-         </CardItem>
+    <View style={styles.container}>
+  <View style={styles.cardSection1}>
+  <Image style = {styles.logo} source = {{uri:'https://bioprotect.com/wp-content/uploads/2017/10/maya-profile-round.jpg'}} />
+  </View>
+  <View style={styles.cardSection2}>
+    <Image style={styles.image} source={{uri: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'}}  />
+
+  </View>
+</View>
+    </CardItem>
+
+    {/* <CardItem cardBody>
+              <ImageBackground source={{uri: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'}} style={{height: 200, width: null, flex: 1}}>
+              <Image style = {styles.logo} source = {{uri:'https://bioprotect.com/wp-content/uploads/2017/10/maya-profile-round.jpg'}} />
+ 
+              
+              </ImageBackground>
+            </CardItem> */}
+
+
          <CardItem footer>
          <Left/>
          <Body/>
@@ -264,9 +281,12 @@ export default class Profile extends Component {
         backgroundColor: '#000000'
       },
       logo: {
-        backgroundColor: 'rgba(0,0,0,0)',
+        // backgroundColor: 'rgba(0,0,0,0)',
         width: 160,
-        height: 52
+        height: 52 ,
+        marginTop : '40%', 
+        marginLeft  : '60%'
+
       },
       backdrop: {
         // flex:1,
@@ -284,6 +304,40 @@ export default class Profile extends Component {
         marginRight: '30%', 
         backgroundColor : '#65c296' , 
 
+      },
+      image: {
+       width: '100%',
+       height: '100%',
+      },
+      cardSection1: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'absolute',
+        width: 100,
+        height: 100,
+        borderRadius: 50 / 2,
+        zIndex: 2,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 0 },
+        shadowOpacity: 0.2,
+        shadowRadius: 10,
+        elevation: 7,
+      },
+      cardSection2: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'absolute',
+        top: 25,
+        width: 300,
+        height: 150,
+        borderRadius: 8,
+        backgroundColor: 'white',
+        zIndex: 1,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 0 },
+        shadowOpacity: 0.2,
+        shadowRadius: 10,
+        elevation: 5,
       }
 
   });
