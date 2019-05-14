@@ -154,6 +154,30 @@ export default class Profile extends Component {
            
          </Card>
          {/* <Card > */}
+         <Card>
+           <CardItem>
+
+           <Icon active name='logo-facebook' />
+           <Icon active name='logo-instagram' />
+           <Icon active name='logo-twitter' />
+           <Icon active name='logo-whatsapp' />
+
+           </CardItem>
+           <CardItem>
+             <Item>
+             <Button    style={styles.bottomButtonGap}>
+            <Text>Chat </Text>
+          </Button>
+             <Button   info  style={styles.bottomButtonGap}>
+            <Text>Notes </Text>
+          </Button>
+             <Button    info >
+            <Text>Share</Text>
+          </Button>
+
+             </Item>
+           </CardItem>
+         </Card>
          
            
            
@@ -250,6 +274,9 @@ export default class Profile extends Component {
         textAlign: 'center',
         backgroundColor: 'rgba(0,0,0,0)',
         color: 'white'
+      }, 
+      bottomButtonGap : {
+        marginRight: '30%'
       }
 
   });
