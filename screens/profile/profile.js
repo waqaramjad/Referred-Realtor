@@ -171,7 +171,8 @@ export default class Profile extends Component {
              <Button   info  style={styles.bottomButtonGap}>
             <Text>Notes </Text>
           </Button>
-             <Button    info >
+             <Button    info  style={{  backgroundColor : '#65c296' , 
+}}>
             <Text>Share</Text>
           </Button>
 
@@ -276,7 +277,9 @@ export default class Profile extends Component {
         color: 'white'
       }, 
       bottomButtonGap : {
-        marginRight: '30%'
+        marginRight: '30%', 
+        backgroundColor : '#65c296' , 
+
       }
 
   });
