@@ -5,6 +5,9 @@ import { Tooltip } from 'react-native-elements';
 // import { Navigator } from 'react-native-deprecated-custom-components'
 // import {Actions} from "react-native-router-flux";
 import {  Item, Input ,  Accordion , Container, Header,  Icon , Content, Card, CardItem,Right,Thumbnail ,  Left ,  Title ,   Button ,  Body } from "native-base";
+// import Stars from ' react-native-stars';
+import Estar from '../../assets/images/starEmpty.png'
+import Fstar from '../../assets/images/starFilled.png'
 import Expo from "expo";
 import gstyles from '../styles/style'
 var myUId = ''
@@ -30,7 +33,8 @@ export default class Profile extends Component {
     cnfrmPassword : '' , 
     
     billINfo : '' , 
-    CardNo : ''
+    CardNo : '' , 
+    showSoundImg: true
     };
 
     const { state, navigate } = this.props.navigation;
@@ -47,8 +51,15 @@ export default class Profile extends Component {
     this.setState({ loading: false });
   }
 
-
- 
+  renderImage()  {
+    var imgSource = this.state.showSoundImg? Estar : Fstar;
+    return (
+      <Image
+      style={styles.favoriteImage} 
+        source={ imgSource }
+      />
+    );
+  }
   
     render() {
   
@@ -86,46 +97,14 @@ export default class Profile extends Component {
          </Body>
          <Right/>
          </CardItem>
-         {/* <CardItem> */}
-           {/* <Body style={styles.centerContent}> */}
-          
-           {/* <View >
-
-           <Thumbnail source={{ uri: 'https://girlinthegarage.net/wp-content/uploads/2015/03/IMG_4790-jen-profile-0215-round.png' }} style={styles.imageSize} />
-           </View> */}
-           {/* {{uri:'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'}} */}
-{/* <View style={styles.container}> */}
-{/* <View style={styles.container}> */}
-            {/* <ImageBackground source =            {{uri:'https://amymorinlcsw.com/wp-content/uploads/2013/11/Amy-Morin-Mentally-Strong-People-Don27t-Do-1024x578.png'}}
-
-               style = {styles.backdrop}>
-              <View style = {styles.overlay}>
-    <Image style = {styles.logo} source = {{uri:'https://bioprotect.com/wp-content/uploads/2017/10/maya-profile-round.jpg'}} />
-              </View>
-
-              </ImageBackground> */}
-    {/* </View> */}
-    <CardItem>
-
-
-    <View style={styles.container}>
-  <View style={styles.cardSection1}>
-  <Image style = {styles.logo} source = {{uri:'https://bioprotect.com/wp-content/uploads/2017/10/maya-profile-round.jpg'}} />
-  </View>
-  <View style={styles.cardSection2}>
-    <Image style={styles.image} source={{uri: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'}}  />
-
-  </View>
-</View>
-    </CardItem>
-
-    {/* <CardItem cardBody>
+    
+    <CardItem cardBody>
               <ImageBackground source={{uri: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'}} style={{height: 200, width: null, flex: 1}}>
               <Image style = {styles.logo} source = {{uri:'https://bioprotect.com/wp-content/uploads/2017/10/maya-profile-round.jpg'}} />
  
               
               </ImageBackground>
-            </CardItem> */}
+            </CardItem>
 
 
          <CardItem footer>
@@ -138,19 +117,7 @@ export default class Profile extends Component {
           </Right>
          </CardItem>
       </Card>
-      {/* <Card style={styles.centerContent}>
-            <CardItem header>
-              <Text  style ={styles.titleText}>Notification Area</Text>
-            </CardItem>
-            <CardItem >
-              <Body>
-                <Text>
-                  No notification right now 
-                </Text>
-              </Body>
-            </CardItem>
-           
-         </Card> */}
+     
          <Card >
          <CardItem header>
             {/* <Left/> */}
@@ -184,6 +151,14 @@ export default class Profile extends Component {
            <Icon active name='logo-whatsapp' />
 
            </CardItem>
+
+           <TouchableOpacity
+           
+            onPress={ () => this.setState({ showSoundImg: !this.state.showSoundImg }) } 
+          >
+            {this.renderImage()}
+          </TouchableOpacity>
+
            <CardItem>
              <Item>
              <Button    style={styles.bottomButtonGap}>
@@ -338,6 +313,11 @@ export default class Profile extends Component {
         shadowOpacity: 0.2,
         shadowRadius: 10,
         elevation: 5,
+      } , 
+      favoriteImage : {
+        height : 40, 
+        width : 40 , 
+        marginLeft : 20
       }
 
   });
