@@ -81,9 +81,13 @@ export default class Profile extends Component {
           <Button transparent  onPress={()=>{navigate("Edit")}} >
              <Text style={{color:'white',fontSize:15 }}>Edit</Text>
             </Button>
-            <Tooltip popover={<Text>Flag as inappropriate</Text>}>
+            <Tooltip popover={<Text>Flag as inappropriate</Text>}
+             style={{backgroundColor : null}} withOverlay={false} withPointer ={false} containerStyle={null}
+             
+           >
+           
   {/* <Text>Press me</Text> */}
-  <Icon name="dots-three-vertical" />
+  <Icon name="flag" style={{color:'white'}} />
 </Tooltip>
           </Right>
         </Header>
@@ -174,19 +178,19 @@ export default class Profile extends Component {
 </CardItem>
 
            <CardItem>
-             <Item>
+             {/* <Item> */}
              <Button    style={styles.bottomButtonGap}>
-            <Text>Chat </Text>
+            <Text style={styles.btnText}>Chat </Text>
           </Button>
              <Button   info  style={styles.bottomButtonGap}>
-            <Text>Notes </Text>
+            <Text style={styles.btnText}>Notes </Text>
           </Button>
              <Button    info  style={{  backgroundColor : '#65c296' , 
 }}>
-            <Text>Share</Text>
+            <Text style={styles.btnText}>Share</Text>
           </Button>
 
-             </Item>
+             {/* </Item> */}
            </CardItem>
          </Card>
          
@@ -275,7 +279,7 @@ export default class Profile extends Component {
         color: 'white'
       }, 
       bottomButtonGap : {
-        marginRight: '30%', 
+        marginRight: '10%', 
         backgroundColor : '#65c296' , 
 
       },
@@ -317,6 +321,10 @@ export default class Profile extends Component {
         height : 40, 
         width : 40 , 
         marginLeft : 20
+      } , 
+      btnText : { 
+        marginLeft : 30 , 
+        marginRight : 30
       }
 
   });
