@@ -99,15 +99,17 @@ export default class Profile extends Component {
          </CardItem>
     
     <CardItem cardBody>
-              <ImageBackground source={{uri: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'}} style={{height: 200, width: null, flex: 1}}>
-              <Image style = {styles.logo} source = {{uri:'https://bioprotect.com/wp-content/uploads/2017/10/maya-profile-round.jpg'}} />
+              <ImageBackground source={{
+                uri:
+                 'http://www.anotherindian.com/wp-content/uploads/2017/03/d3f20dcb0c33ef8a3c2cb3b82f3eef08.jpg'}} style={{height: 200, width: null, flex: 1}}>
+              <Image style = {styles.logo} source = {{uri:'https://news.pg.com/sites/pg.newshq.businesswire.com/files/logo/image/2018_PGlogo.png'}} />
  
               
               </ImageBackground>
             </CardItem>
 
 
-         <CardItem footer>
+         {/* <CardItem footer>
          <Left/>
          <Body/>
          <Right>
@@ -115,27 +117,27 @@ export default class Profile extends Component {
             <Text>Change Picture </Text>
           </Button>
           </Right>
-         </CardItem>
+         </CardItem> */}
       </Card>
      
          <Card >
          <CardItem header>
             {/* <Left/> */}
-            <Body style={styles.centerContent}>
-            <Text style ={styles.titleText}> Bio </Text>
-            </Body>
+            {/* <Body style={styles.centerContent}> */}
+            {/* <Text style ={styles.titleText}> Bio </Text> */}
+            {/* </Body> */}
             </CardItem>
             <CardItem  >
-              <Body style={styles.bodyContent}>
-                <Text> Name : Senita Zen </Text>
-                <Text> Location : Canada  </Text>
-                <Text> Experience : 8 years </Text>
-                <Text> Email Adress :xyz@gmail.com </Text>
+              <Body style={styles.centerContent}>
+                <Text style={{fontSize : 30}}>  Senita Zen </Text>
+                <Text> Cairo , USA </Text>
+                <Text> Software Developer</Text>
+                <Text> 5 year experience  </Text>
                   {/* <Text> Billing info  : {this.state.billINfo} </Text> */}
                 {/* <Text> Credit Card No :{this.state.CardNo}   </Text> */}
-                <Text> Company Name  : MS    </Text>
+                {/* <Text> Company Name  : MS    </Text>
                 <Text> Snapchat username  :  Senita345   </Text>
-                <Text> Skype username  :  Senita345   </Text>
+                <Text> Skype username  :  Senita345   </Text> */}
                 {/* <Text> Skype username  :  Senita345   </Text> */}
               </Body>
             </CardItem>
@@ -143,7 +145,7 @@ export default class Profile extends Component {
          </Card>
          {/* <Card > */}
          <Card>
-           <CardItem>
+           <CardItem style={{marginLeft : '30%'}}>
 
            <Icon active name='logo-facebook' />
            <Icon active name='logo-instagram' />
@@ -151,6 +153,8 @@ export default class Profile extends Component {
            <Icon active name='logo-whatsapp' />
 
            </CardItem>
+<CardItem>
+<Left>
 
            <TouchableOpacity
            
@@ -158,6 +162,16 @@ export default class Profile extends Component {
           >
             {this.renderImage()}
           </TouchableOpacity>
+</Left>
+<Right>
+    {/* <Text> Billing info  : {this.state.billINfo} </Text>
+                <Text> Credit Card No :{this.state.CardNo}   </Text>
+                <Text> Company Name  : MS    </Text>  */}
+                <Text> Senita Zen   </Text>
+                <Text> Software Developer  </Text> 
+                {/* <Text> Skype username  :  Senita345   </Text> */}
+</Right>
+</CardItem>
 
            <CardItem>
              <Item>
@@ -179,22 +193,7 @@ export default class Profile extends Component {
            
            
            
-           {/* <CardItem>
-             <Body>
-             <Item  >
-            <Input placeholder='Enter your message here '/>
-            <Button  primary block   >
-            <Text style={{color:'white'}}>Send</Text>
-          </Button>
-          </Item>
-          <Item >
-          <Text style={styles.email}>  abc@gmail.com </Text>
-            </Item>
-
-
-             </Body>
-           </CardItem> */}
-         {/* </Card> */}
+          
      </Content>
            
             
@@ -257,10 +256,10 @@ export default class Profile extends Component {
       },
       logo: {
         // backgroundColor: 'rgba(0,0,0,0)',
-        width: 160,
-        height: 52 ,
-        marginTop : '40%', 
-        marginLeft  : '60%'
+        width: 100,
+        height: 100 ,
+        marginTop : '25%', 
+        marginLeft  : '70%'
 
       },
       backdrop: {
