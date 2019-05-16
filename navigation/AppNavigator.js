@@ -10,6 +10,7 @@ import Example from '../screens/modal/model'
 import SignUp from '../screens/SignUp/SignUp'
 import Sidebar from '../screens/Drwaer/drawer'
 import Edit from '../screens/edit/edit'
+import Post from '../screens/Post/post'
 
 const MyDrawerNavigator = createDrawerNavigator(
 	{
@@ -22,6 +23,7 @@ const MyDrawerNavigator = createDrawerNavigator(
 );
 
 const App = createStackNavigator({
+  Post : {screen :Post },
   tab : {screen : MainTabNavigator , navigationOptions :({
     header : null
   })} , 

@@ -226,6 +226,12 @@ uri:
 </Right>
 </CardItem>
 
+{/* <CardItem> */}
+
+<Button rounded info full style={styles.PostStyle}>
+            <Text style={styles.PostText}>Post</Text>
+          </Button>
+{/* </CardItem> */}
         </Card>
         {/* <ButtonGroup
       onPress={this.updateIndex}
@@ -251,6 +257,17 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#2e78b7',
   },
+  PostStyle : {
+    // margin : '0% 10% 0% 10%'
+    marginLeft : '10%', 
+    marginRight : '10%'
+
+  } , 
+  PostText : { 
+    color: 'white', 
+    // fontSize : 20
+  }
+
 });
 
 
