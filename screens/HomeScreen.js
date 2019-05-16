@@ -56,11 +56,12 @@ export default class HomeScreen extends React.Component {
       {/* <Header /> */}
       <Content>
         <Card>
-          <CardItem header>
+          <Card>
+          <CardItem header bordered>
 
                 <Text>new message received from Lori beggs</Text> 
           </CardItem>
-          <CardItem>
+          <CardItem bordered>
             <Left>
               <Thumbnail 
               source={{
@@ -78,7 +79,7 @@ export default class HomeScreen extends React.Component {
           {/* <CardItem cardBody>
             <Image source={{uri: 'https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} style={{height: 200, width: null, flex: 1}}/>
           </CardItem>  */}
-          <CardItem>
+          <CardItem bordered>
 
        
             <Left style={{border:'1px solid black'}}>
@@ -97,12 +98,14 @@ export default class HomeScreen extends React.Component {
               </Button>
             </Right>
            </CardItem>
+           </Card>
+           <Card>
           {/* card item no 2 */}
           <CardItem header>
 
 <Text>You are now connected with </Text> 
 </CardItem>
-<CardItem>
+<CardItem bordered>
 <Left>
 <Thumbnail 
 source={{
@@ -116,15 +119,15 @@ uri:
 <Text note>Self Besiness  </Text>
 </Body>
 </Left>
-</CardItem>
+</CardItem >
 {/* <CardItem cardBody>
 <Image source={{uri: 'https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} style={{height: 200, width: null, flex: 1}}/>
 </CardItem>  */}
-<CardItem>
+<CardItem bordered>
 
 
-<Left style={{border:'1px solid black'}}>
-<Button transparent>
+<Left  bordered>
+<Button  transparent >
 <Text>Ignore</Text>
 </Button>
 </Left>
@@ -139,13 +142,14 @@ uri:
 </Button>
 </Right>
 </CardItem>
-
+</Card>
 {/* card no 3  */}
-          <CardItem header>
+<Card>
+          <CardItem  bordered header>
 
 <Text>Rahul have new Notifications</Text> 
 </CardItem>
-<CardItem>
+<CardItem bordered>
 <Left>
 <Thumbnail 
 source={{
@@ -166,7 +170,7 @@ uri:
 <CardItem>
 
 
-<Left style={{border:'1px solid black'}}>
+<Left style={{border:'7px solid black'}}>
 <Button transparent>
 <Text>Ignore</Text>
 </Button>
@@ -182,8 +186,9 @@ uri:
 </Button>
 </Right>
 </CardItem>
-
+</Card>
 {/* card no 4  */}
+  <Card>
           <CardItem header>
 
 <Text>New message received from Sara Ali</Text> 
@@ -225,7 +230,7 @@ uri:
 </Button>
 </Right>
 </CardItem>
-
+</Card>
 {/* <CardItem> */}
 
 <Button rounded info full style={styles.PostStyle}>

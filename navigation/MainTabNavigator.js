@@ -24,7 +24,7 @@ const HomeStack = createStackNavigator({
 HomeStack.navigationOptions = {
  
   tabBarIcon: ({ focused }) => (
-    <Image style={{ width: 50, height: 50 }} 
+    <Image style={{ width: 33, height: 33 }} 
     source={require('../assets/bottomBarIcons/hamburg.png')} />
   ),
 };
@@ -35,7 +35,7 @@ const LocateStack = createStackNavigator({
 LocateStack.navigationOptions = {
  
   tabBarIcon: ({ focused }) => (
-    <Image style={{ width: 50, height: 50 }} 
+    <Image style={{ width: 33, height: 33 }} 
     source={require('../assets/bottomBarIcons/locate.jpeg')} />
   ),
 };
@@ -46,7 +46,7 @@ const CompnayStack = createStackNavigator({
 CompnayStack.navigationOptions = {
  
   tabBarIcon: ({ focused }) => (
-    <Image style={{ width: 45, height: 45 }} 
+    <Image style={{ width: 33, height: 33 }} 
     source={require('../assets/bottomBarIcons/location.png')} />
   ),
 };
@@ -57,7 +57,7 @@ const LinksStack = createStackNavigator({
 
 LinksStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
-    <Image style={{ width: 32, height: 32 }} 
+    <Image style={{ width: 33, height: 33 }} 
     source={require('../assets/bottomBarIcons/messge.png')} />
     // <Icon active name="hamburger" />
   ),

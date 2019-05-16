@@ -109,7 +109,7 @@ export default class Nav extends React.Component {
            </TouchableHighlight>
           </Left>
           <Body>
-            <Title>{this.props.ScreenName}</Title>
+            <Title style={{marginLeft:'10%' }}>{this.props.ScreenName}</Title>
           </Body>
           <Right>
             <Button transparent>

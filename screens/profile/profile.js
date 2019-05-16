@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View,AppRegistry, FlatList,  TouchableOpacity, ImageBackground,Dimensions, StatusBar, Image, Text, Modal } from 'react-native';
 import { Tooltip } from 'react-native-elements';
-// import firebase from 'firebase';
-// import { Navigator } from 'react-native-deprecated-custom-components'
-// import {Actions} from "react-native-router-flux";
 import {  Item, Input ,  Accordion , Container, Header,  Icon , Content, Card, CardItem,Right,Thumbnail ,  Left ,  Title ,   Button ,  Body } from "native-base";
-// import Stars from ' react-native-stars';
 import Estar from '../../assets/images/starEmpty.png'
 import Fstar from '../../assets/images/starFilled.png'
 import Expo from "expo";
@@ -168,12 +164,9 @@ export default class Profile extends Component {
           </TouchableOpacity>
 </Left>
 <Right>
-    {/* <Text> Billing info  : {this.state.billINfo} </Text>
-                <Text> Credit Card No :{this.state.CardNo}   </Text>
-                <Text> Company Name  : MS    </Text>  */}
+   
                 <Text> Senita Zen   </Text>
                 <Text> Software Developer  </Text> 
-                {/* <Text> Skype username  :  Senita345   </Text> */}
 </Right>
 </CardItem>
 
