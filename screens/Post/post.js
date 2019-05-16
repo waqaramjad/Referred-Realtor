@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Container,Button , Header, Card, CardItem,Content, Text, Textarea, Form } from "native-base";
 // import { Button } from "react-native-elements";
+import Nav from '../NavBar'
+
 export default class Post extends Component {
 
 
@@ -30,6 +32,8 @@ export default class Post extends Component {
     
     return (
       <Container>
+                <Nav ScreenName ='Post' ScreenShow={false} navigation={this.props.navigation} />
+
         <Content >
             <Textarea rowSpan={5} bordered placeholder="Textarea" />
                 <Button>
