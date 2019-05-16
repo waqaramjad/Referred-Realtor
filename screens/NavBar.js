@@ -114,7 +114,7 @@ export default class Nav extends React.Component {
           <Right>
             <Button transparent>
               <Icon name='notifications' style={{marginRight : 7}}/>
-              <Icon name='share' onPress={()=><Example modalValue={true}/> } />
+              <Icon name='share' onPress={()=><Example modalValue={true}/> } onPress={()=>{this.setState({ visibleModal: 6 })}}/>
             </Button>
           </Right>
         </Header>
@@ -123,7 +123,7 @@ export default class Nav extends React.Component {
             <Icon name="ios-search" />
             <Input placeholder="Search" />
             {/* <Icon name="mic" onPress={()=>{return(<Example modalValue={true}/>)}}   /> */}
-            <Icon name="mic" onPress={()=>{this.setState({ visibleModal: 6 })}}   />
+            <Icon name="mic"    />
             {/* <Icon name="mic" onPress={()=>alert('sdf') }  /> */}
           </Item>
          

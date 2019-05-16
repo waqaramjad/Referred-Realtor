@@ -23,12 +23,12 @@ const MyDrawerNavigator = createDrawerNavigator(
 );
 
 const App = createStackNavigator({
+  SignIn: {screen: SignIn},
   tab : {screen : MainTabNavigator , navigationOptions :({
     header : null
   })} , 
   Profile : {screen : Profile},
   Post : {screen :Post },
-  SignIn: {screen: SignIn},
   Edit : {screen : Edit},
   Example : {screen : Example},
   Nav : {screen : Nav},

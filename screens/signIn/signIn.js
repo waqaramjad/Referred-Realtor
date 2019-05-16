@@ -71,7 +71,7 @@ export default class SignIn extends React.Component {
       
       <View style={{marginTop : '15%'}} >
 
-          <Button block bordered light style={styles.FbAndLogBtn}>
+          <Button block bordered light style={styles.FbAndLogBtn}  onPress={()=>{navigate("tab")}}>
             <Text style={styles.textForFband}>Login</Text>
           </Button>
           </View>

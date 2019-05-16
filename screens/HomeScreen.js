@@ -101,7 +101,7 @@ export default class HomeScreen extends React.Component {
            </Card>
            <Card>
           {/* card item no 2 */}
-          <CardItem header>
+          <CardItem header bordered>
 
 <Text>You are now connected with </Text> 
 </CardItem>
@@ -167,7 +167,7 @@ uri:
 {/* <CardItem cardBody>
 <Image source={{uri: 'https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} style={{height: 200, width: null, flex: 1}}/>
 </CardItem>  */}
-<CardItem>
+<CardItem bordered>
 
 
 <Left style={{border:'7px solid black'}}>
@@ -189,11 +189,11 @@ uri:
 </Card>
 {/* card no 4  */}
   <Card>
-          <CardItem header>
+          <CardItem header bordered>
 
 <Text>New message received from Sara Ali</Text> 
 </CardItem>
-<CardItem>
+<CardItem bordered>
 <Left>
 <Thumbnail 
 source={{
@@ -211,7 +211,7 @@ uri:
 {/* <CardItem cardBody>
 <Image source={{uri: 'https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} style={{height: 200, width: null, flex: 1}}/>
 </CardItem>  */}
-<CardItem>
+<CardItem bordered>
 
 
 <Left style={{border:'1px solid black'}}>
