@@ -6,6 +6,8 @@ import Estar from '../../assets/images/starEmpty.png'
 import Fstar from '../../assets/images/starFilled.png'
 import Expo from "expo";
 import gstyles from '../styles/style'
+import { Ionicons } from '@expo/vector-icons'
+
 var myUId = ''
 
 

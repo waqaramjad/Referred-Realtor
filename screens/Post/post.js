@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container,Button , Header, Card, CardItem,Content, Text, Textarea, Form } from "native-base";
 // import { Button } from "react-native-elements";
 import Nav from '../NavBar'
+import { Ionicons } from '@expo/vector-icons'
 
 export default class Post extends Component {
 

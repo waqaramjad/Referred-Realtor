@@ -11,6 +11,7 @@ import {
 import { WebBrowser } from 'expo';
 import { Container, Header, Left, Body, Right, Button, Icon, Title , List, ListItem, Content, Card, CardItem, Thumbnail,} from 'native-base';
 import Nav from './NavBar'
+import { Ionicons } from '@expo/vector-icons'
 
 import { MonoText } from '../components/StyledText';
 

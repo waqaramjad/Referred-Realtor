@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import { Container, Header, Left, Body,Form, Item, Input, Label , Right, Button, Icon, Title ,  Content, Card, CardItem, Thumbnail,} from 'native-base';
-
+import { Ionicons } from '@expo/vector-icons'
 export default class SignIn extends React.Component {
   static navigationOptions = {
     header: null,

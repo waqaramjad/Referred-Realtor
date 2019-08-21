@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import { Container, Header, Left, Body,Form, Item, Input, Label ,CheckBox, Right,ListItem, Radio,Button, Icon, Title ,  Content, Card, CardItem, Thumbnail,} from 'native-base';
+import { Ionicons } from '@expo/vector-icons'
+
 // import Nav from './NavBar'
 
 // import { MonoText } from '../components/StyledText';

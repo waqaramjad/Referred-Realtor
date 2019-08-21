@@ -15,6 +15,8 @@ import styles1 from './styles/style'
 import Example from './modal/model'
 import { MonoText } from '../components/StyledText';
 import Modal from "react-native-modal";
+import { Ionicons } from '@expo/vector-icons'
+
 export default class Nav extends React.Component {
   static navigationOptions = {
     header: null,
