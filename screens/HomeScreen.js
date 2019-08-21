@@ -32,11 +32,10 @@ export default class HomeScreen extends React.Component {
   }
   async componentWillMount() {
     await Expo.Font.loadAsync({
-      Roboto: require("native-base/Fonts/Roboto.ttf"),
-      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
-      Ionicons: require("@expo/vector-icons/fonts/Ionicons.ttf"),
-    });
-    this.setState({ loading: false });
+      Roboto: require("./resource/Roboto.ttf"),
+      Roboto_medium: require("./resource/Roboto_medium.ttf"),
+      ...Ionicons.font,    });
+          this.setState({ loading: false });
   }
   updateIndex (selectedIndex) {
     this.setState({selectedIndex})
@@ -310,7 +309,7 @@ const styles = StyleSheet.create({
 //     await Expo.Font.loadAsync({
 //       Roboto: require("native-base/Fonts/Roboto.ttf"),
 //       Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
-//       Ionicons: require("@expo/vector-icons/fonts/Ionicons.ttf"),
+//       Ionicons: require("@expo/vector-icons/website/src/fonts/Ionicons.ttf"),
 //     });
 //     this.setState({ loading: false });
 //   }

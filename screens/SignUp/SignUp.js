@@ -28,11 +28,10 @@ export default class SignUp extends React.Component {
     }}
   async componentWillMount() {
     await Expo.Font.loadAsync({
-      Roboto: require("native-base/Fonts/Roboto.ttf"),
-      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
-      Ionicons: require("@expo/vector-icons/fonts/Ionicons.ttf"),
-    });
-    this.setState({ loading: false });
+      Roboto: require("../resource/Roboto.ttf"),
+      Roboto_medium: require("../resource/Roboto_medium.ttf"),
+      ...Ionicons.font,    });
+          this.setState({ loading: false });
   }
 
 
