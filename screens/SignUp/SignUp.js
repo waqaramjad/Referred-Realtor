@@ -11,6 +11,12 @@ import {
 import { WebBrowser } from 'expo';
 import { Container, Header, Left, Body,Form, Item, Input, Label ,CheckBox, Right,ListItem, Radio,Button, Icon, Title ,  Content, Card, CardItem, Thumbnail,} from 'native-base';
 import { Ionicons } from '@expo/vector-icons'
+import firebase, { database } from 'firebase';
+import { Constants, ImagePicker, Permissions } from 'expo';
+import {
+  ImageEditor,
+} from 'react-native';
+import firebaseSvc from '../resource/FirebaseSvc';
 
 // import Nav from './NavBar'
 
@@ -21,13 +27,27 @@ export default class SignUp extends React.Component {
     header: null,
   };
 
-  constructor(props) {
-    super(props);
+  constructor(props){
+		super(props)
+		this.state={
+      name : '' ,
+      FName : '',
+      LName : ' ', 
+     YearOfExperience : '',
+     Gender : '',
+			email:'', 
+      password:''	, 
+      cnfrmPass :'',
 
-    this.state = {
+      avatar : ' https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png', 
+      loading: true , 
+      hasCameraPermission: null,
+     		
+    }
+    
+    const { state, navigate } = this.props.navigation;
 
-      loading: true ,
-    }}
+	}
   async componentWillMount() {
     await Expo.Font.loadAsync({
       Roboto: require("../resource/Roboto.ttf"),
@@ -35,6 +55,110 @@ export default class SignUp extends React.Component {
       ...Ionicons.font,    });
           this.setState({ loading: false });
   }
+
+  moveToSignIn= ()=>{
+
+    console.log(this.props)
+    const { state, navigate } = this.props.navigation;
+    navigate("SignIn" )
+    console.log('navigate')
+    console.log(navigate)
+
+
+  }
+
+  onPressCreate = async () => {
+    console.log('create account... email:' + this.state.email);
+    try {
+      const user = {
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password,
+        avatar: this.state.avatar,
+      };
+
+      var str1 = this.state.cnfrmPass;
+      var str2 = this.state.password
+      var n = str1.localeCompare(str2);
+      // //console.log(n)  
+
+      if(n===-1){
+        alert('Password not matched')
+
+      }
+
+      else{
+      await firebaseSvc.createAccount(user);
+   } } catch ({ message }) {
+      console.log('create account failed. catch error:' + message);
+    }
+  };
+
+  onChangeTextEmail = email => this.setState({ email });
+  onChangeTextPassword = password => this.setState({ password });
+  onChangeTextName = name => this.setState({ name });
+
+  onImageUpload = async () => {
+    const { status: cameraRollPerm } = await Permissions.askAsync(
+      Permissions.CAMERA_ROLL
+      );
+    //   alert(status)
+      try {
+        // only if user allows permission to camera roll
+        // alert('NT done')
+        alert(this.state.hasCameraPermission)
+        if (cameraRollPerm === 'granted') {
+          // alert('done')
+        console.log('choosing image granted...');
+        let pickerResult = await ImagePicker.launchImageLibraryAsync({
+          allowsEditing: true,
+          aspect: [4, 3],
+        });
+        console.log(
+          'ready to upload... pickerResult json:' + JSON.stringify(pickerResult)
+        );
+
+        var wantedMaxSize = 150;
+        var rawheight = pickerResult.height;
+        var rawwidth = pickerResult.width;
+        
+        var ratio = rawwidth / rawheight;
+        var wantedwidth = wantedMaxSize;
+        var wantedheight = wantedMaxSize/ratio;
+        // check vertical or horizontal
+        if(rawheight > rawwidth){
+            wantedwidth = wantedMaxSize*ratio;
+            wantedheight = wantedMaxSize;
+        }
+        console.log("scale image to x:" + wantedwidth + " y:" + wantedheight);
+        let resizedUri = await new Promise((resolve, reject) => {
+          ImageEditor.cropImage(pickerResult.uri,
+          {
+              offset: { x: 0, y: 0 },
+              size: { width: pickerResult.width, height: pickerResult.height },
+              displaySize: { width: wantedwidth, height: wantedheight },
+              resizeMode: 'contain',
+          },
+          (uri) => resolve(uri),
+          () => reject(),
+          );
+        });
+        let uploadUrl = await firebaseSvc.uploadImage(resizedUri);
+        //let uploadUrl = await firebaseSvc.uploadImageAsync(resizedUri);
+         this.setState({ avatar: uploadUrl });
+        console.log(" - await upload successful url:" + uploadUrl);
+        console.log(" - await upload successful avatar state:" + this.state.avatar);
+        // await firebaseSvc.updateAvatar(uploadUrl); //might failed
+      }
+    } catch (err) {
+      // alert(err.message)
+
+      console.log('onImageUpload error:' + err.message);
+      alert('Upload image error:' + err.message);
+    }
+  };
+
+
 
 
   render() {
@@ -76,6 +200,26 @@ export default class SignUp extends React.Component {
             <Item floatingLabel last>
               <Label style={styles.textFBandLog}>Year Of Experience</Label>
               <Input />
+            </Item>
+            <Item >
+            {/* <Icon active name='lock' /> */}
+
+              <Input onChangeText={name => this.setState({name})}  placeholder='User Name  '/>
+            </Item>
+            <Item >
+            {/* <Icon active name='lock' /> */}
+
+              <Input onChangeText={email => this.setState({email})}  placeholder='Email '/>
+            </Item>
+            <Item  last>
+              {/* <Label>Password</Label> */}
+              {/* <Icon active name='lock' /> */}
+              <Input  secureTextEntry={true}	 secureTextEntry={true}  onChangeText= {password => this.setState({password})}  placeholder='Password ' />
+            </Item>
+            <Item  last>
+              {/* <Label>Password</Label> */}
+              {/* <Icon active name='lock' /> */}
+              <Input  secureTextEntry={true}	onChangeText={cnfrmPass => this.setState({cnfrmPass})}  placeholder='Confirm Password ' />
             </Item>
           </Form>
 
@@ -191,7 +335,7 @@ export default class SignUp extends React.Component {
           <Text style={{justifyContent: "flex-end" , textAlign: 'right' , marginRight : '6%', color :'white'}}>Forget Password</Text>
       <View style={{marginTop : '15%'}} >
 
-          <Button block bordered light style={styles.FbAndLogBtn}>
+          <Button block bordered light style={styles.FbAndLogBtn} onPress={() => this.onPressCreate()}>
             <Text style={styles.textForFband}>Sign Up</Text>
           </Button>
           </View>
