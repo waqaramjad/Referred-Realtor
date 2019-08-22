@@ -63,7 +63,11 @@ export default class SignIn extends React.Component {
   };
 
   loginSuccess = () => {
-    alert('login successful, navigate to chat.');
+    // alert('login successful, navigate to chat.');
+    const { navigate  , state} = this.props.navigation; 
+
+    navigate("tab")
+
     // this.props.navigation.navigate('Home', {
     //   name: this.state.name,
     //   email: this.state.email,
