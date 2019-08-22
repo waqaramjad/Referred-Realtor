@@ -30,7 +30,7 @@ export default class SignUp extends React.Component {
   constructor(props){
 		super(props)
 		this.state={
-      name : '' ,
+      Uname : '' ,
       FName : '',
       LName : ' ', 
      YearOfExperience : '',
@@ -38,8 +38,16 @@ export default class SignUp extends React.Component {
 			email:'', 
       password:''	, 
       cnfrmPass :'',
+Location : '',
 
-      avatar : ' https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png', 
+    call  : ''   ,
+    mail   :   '' ,
+    Facebook  :    '',
+    Instagram  :    '',
+    Twitter   : '' , 
+    Whats  : '' , 
+    
+    avatar : ' https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png', 
       loading: true , 
       hasCameraPermission: null,
      		
@@ -71,10 +79,22 @@ export default class SignUp extends React.Component {
     console.log('create account... email:' + this.state.email);
     try {
       const user = {
-        name: this.state.name,
+        // name: this.state.name,
         email: this.state.email,
         password: this.state.password,
         avatar: this.state.avatar,
+        Location : this.state.Location,
+        Uname : this.state.Uname ,
+        FName : this.state.FName,
+        LName :this.state.LName, 
+    call  :  this.state.call  ,
+    mail   :  this.state.mail ,
+    Facebook  :   this.state.Facebook,
+    Instagram  :    this.state. Instagram,
+    Twitter   :  this.state.Twitter , 
+    Whats  :  this.state.Whats, 
+    YearOfExperience  :  this.state.YearOfExperience, 
+
       };
 
       var str1 = this.state.cnfrmPass;
@@ -183,40 +203,36 @@ export default class SignUp extends React.Component {
         <Form>
             <Item floatingLabel>
               <Label style={styles.textFBandLog}>First Name</Label>
-              <Input />
+              <Input onChangeText={FName => this.setState({FName})} />
             </Item>
             <Item floatingLabel last>
               <Label style={styles.textFBandLog}>Last Name</Label>
-              <Input />
+              <Input  onChangeText={LName => this.setState({LName})}  />
             </Item>
             <Item floatingLabel last>
               <Label style={styles.textFBandLog}>User Name</Label>
-              <Input />
+              <Input  onChangeText={Uname => this.setState({Uname})} />
             </Item>
             <Item floatingLabel last>
               <Label style={styles.textFBandLog}>Location</Label>
-              <Input />
+              <Input  onChangeText={Location => this.setState({Location})} />
             </Item>
             <Item floatingLabel last>
               <Label style={styles.textFBandLog}>Year Of Experience</Label>
-              <Input />
+              <Input  onChangeText={YearOfExperience => this.setState({YearOfExperience})}/>
             </Item>
-            <Item >
-            {/* <Icon active name='lock' /> */}
-
-              <Input onChangeText={name => this.setState({name})}  placeholder='User Name  '/>
-            </Item>
-            <Item >
+           
+            <Item floatingLabel >
             {/* <Icon active name='lock' /> */}
 
               <Input onChangeText={email => this.setState({email})}  placeholder='Email '/>
             </Item>
-            <Item  last>
+            <Item  floatingLabel>
               {/* <Label>Password</Label> */}
               {/* <Icon active name='lock' /> */}
               <Input  secureTextEntry={true}	 secureTextEntry={true}  onChangeText= {password => this.setState({password})}  placeholder='Password ' />
             </Item>
-            <Item  last>
+            <Item  floatingLabel>
               {/* <Label>Password</Label> */}
               {/* <Icon active name='lock' /> */}
               <Input  secureTextEntry={true}	onChangeText={cnfrmPass => this.setState({cnfrmPass})}  placeholder='Confirm Password ' />
@@ -289,15 +305,15 @@ export default class SignUp extends React.Component {
               <Body>
               <Item>
             <Icon active name='md-call' />
-            <Input placeholder='Call'/>
+            <Input  onChangeText={call => this.setState({call})} placeholder='Call'/>
           </Item>
               <Item>
             <Icon active name='mail' />
-            <Input placeholder='Text Message'/>
+            <Input  onChangeText={mail => this.setState({mail})} placeholder='Text Message'/>
           </Item>
               <Item>
             <Icon active name='md-mail' />
-            <Input placeholder='Email'/>
+            <Input placeholder='Email'  onChangeText={FName => this.setState({FName})}/>
           </Item>
               </Body>
             </CardItem>
@@ -313,19 +329,19 @@ export default class SignUp extends React.Component {
               <Body>
               <Item>
             <Icon active name='logo-facebook' />
-            <Input placeholder='Facebook'/>
+            <Input placeholder='Facebook' onChangeText={Facebook => this.setState({Facebook})}/>
           </Item>
               <Item>
             <Icon active name='logo-instagram' />
-            <Input placeholder='Instagram'/>
+            <Input placeholder='Instagram'  onChangeText={Instagram => this.setState({Instagram})}/>
           </Item>
               <Item>
             <Icon active name='logo-twitter' />
-            <Input placeholder='Twitter'/>
+            <Input placeholder='Twitter'  onChangeText={Twitter => this.setState({Twitter})}/>
           </Item>
               <Item>
             <Icon active name='logo-whatsapp' />
-            <Input placeholder="Whats App"/>
+            <Input placeholder="Whats App"  onChangeText={Whats => this.setState({Whats})}/>
           </Item>
               </Body>
             </CardItem>

@@ -88,7 +88,7 @@ var that = this
   <Text style={{fontSize:24}}>Chat</Text> 
 
     </Body>       
-          <Right>
+          {/* <Right>
             <Button onPress={()=>{that.props.navigation.navigate('Invite')}}>
 
             <Text>
@@ -97,7 +97,7 @@ var that = this
             </Button>
 
 
-          </Right>
+          </Right> */}
         </Header>
         <Content>
           <List>
