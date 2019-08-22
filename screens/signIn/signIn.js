@@ -11,18 +11,33 @@ import {
 import { WebBrowser } from 'expo';
 import { Container, Header, Left, Body,Form, Item, Input, Label , Right, Button, Icon, Title ,  Content, Card, CardItem, Thumbnail,} from 'native-base';
 import { Ionicons } from '@expo/vector-icons'
+import { auth, initializeApp, storage } from 'firebase';
+import uuid from 'uuid';
+import firebase, { database } from 'firebase';
+// import Expo from "expo";
+// import {AppLoading} from "expo";
+import firebaseSvc from '../resource/FirebaseSvc';
+
+
 export default class SignIn extends React.Component {
   static navigationOptions = {
     header: null,
   };
 
-  constructor(props) {
-    super(props);
+  constructor(props){
+		super(props)
+		this.state={
+      loading: true , 
+			userEmail:'',
+      userPassword:'', 
+      email: 'test3@gmail.com',
+      password: 'test123',
+      avatar: '',
+      name: '',
 
-    this.state = {
+      }
+	}
 
-      loading: true ,
-    }}
   async componentWillMount() {
     await Expo.Font.loadAsync({
       Roboto: require("../resource/Roboto.ttf"),
@@ -30,6 +45,40 @@ export default class SignIn extends React.Component {
       ...Ionicons.font,    });
     this.setState({ loading: false });
   }
+
+  onPressLogin = async () => {
+    console.log('pressing login... email:' + this.state.email);
+    const user = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      avatar: this.state.avatar,
+    };
+
+    const response = firebaseSvc.login(
+      user,
+      this.loginSuccess,
+      this.loginFailed
+    );
+  };
+
+  loginSuccess = () => {
+    alert('login successful, navigate to chat.');
+    // this.props.navigation.navigate('Home', {
+    //   name: this.state.name,
+    //   email: this.state.email,
+    //   avatar: this.state.avatar,
+    // });
+  };
+  loginFailed = () => {
+    console.log('login failed ***');
+    alert('Login failure. Please tried again.');
+  };
+
+
+  onChangeTextEmail = email => this.setState({ email });
+  onChangeTextPassword = password => this.setState({ password });
+
 
 
   render() {
@@ -54,11 +103,11 @@ export default class SignIn extends React.Component {
         <Form>
             <Item stackedLabel>
               <Label style={styles.textFBandLog}>Email</Label>
-              <Input />
+              <Input  onChangeText={email => this.setState({email})}  value={this.state.email}/>
             </Item>
             <Item stackedLabel last>
               <Label style={styles.textFBandLog}>Password</Label>
-              <Input />
+              <Input secureTextEntry={true}	onChangeText={password => this.setState({password})} />
             </Item>
           </Form>
           
@@ -70,7 +119,8 @@ export default class SignIn extends React.Component {
       
       <View style={{marginTop : '15%'}} >
 
-          <Button block bordered light style={styles.FbAndLogBtn}  onPress={()=>{navigate("tab")}}>
+          {/* <Button block bordered light style={styles.FbAndLogBtn}  onPress={()=>{navigate("tab")}}> */}
+          <Button block bordered light style={styles.FbAndLogBtn}  onPress={() => this.onPressLogin()}>
             <Text style={styles.textForFband}>Login</Text>
           </Button>
           </View>
@@ -81,7 +131,8 @@ export default class SignIn extends React.Component {
             <Text onPress={()=>{this.props.navigation.navigate('SignUp')}} style={{  textAlign: 'center',color :'white' , marginLeft : "20%" ,marginTop : '3%' , marginBottom : '6%'  }} >New User ? Sign Up</Text>
            
             </View>
-            <Button block  style={{ backgroundColor : 'white'}} onPress={()=>{navigate("tab")}}>
+            {/* <Button block  style={{ backgroundColor : 'white'}} onPress={()=>{navigate("tab")}}> */}
+            <Button block  style={{ backgroundColor : 'white'}}  onPress={() => this.onPressLogin()}>
             <Text style={{color : '#65c296' , backgroundColor : 'white'}}>Facebook</Text>
           </Button>
           </View>
