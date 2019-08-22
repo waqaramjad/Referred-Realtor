@@ -8,6 +8,7 @@ import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import LocateScreen from '../screens/Locate';
 import CompnayScreen from '../screens/Companies';
+import ChatScreen from '../screens/Chat'
 import Nav from '../screens/NavBar'
 
 // import Icon from ''
@@ -51,11 +52,11 @@ CompnayStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const ChatStack = createStackNavigator({
+  Chat: ChatScreen,
 });
 
-LinksStack.navigationOptions = {
+ChatStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <Image style={{ width: 33, height: 33 }} 
     source={require('../assets/bottomBarIcons/messge.png')} />
@@ -78,7 +79,7 @@ export default createBottomTabNavigator({
   HomeStack,
   CompnayStack ,
   SettingsStack,
-  LinksStack,
+  ChatStack,
 
 }
 , {

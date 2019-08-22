@@ -11,7 +11,7 @@ import SignUp from '../screens/SignUp/SignUp'
 import Sidebar from '../screens/Drwaer/drawer'
 import Edit from '../screens/edit/edit'
 import Post from '../screens/Post/post'
-
+import ChatMessages from '../screens/ChatMessages' 
 const MyDrawerNavigator = createDrawerNavigator(
 	{
 		Sidebar : { screen: Sidebar  },
@@ -28,6 +28,7 @@ const App = createStackNavigator({
   tab : {screen : MainTabNavigator , navigationOptions :({
     header : null
   })} , 
+  ChatMessages : {screen : ChatMessages},
   Profile : {screen : Profile},
   Post : {screen :Post },
   Edit : {screen : Edit},
