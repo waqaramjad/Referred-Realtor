@@ -111,7 +111,7 @@ export default class SignIn extends React.Component {
             </Item>
             <Item stackedLabel last>
               <Label style={styles.textFBandLog}>Password</Label>
-              <Input secureTextEntry={true}	onChangeText={password => this.setState({password})} />
+              <Input secureTextEntry={true}	onChangeText={password => this.setState({password})} value={this.state.password} />
             </Item>
           </Form>
           

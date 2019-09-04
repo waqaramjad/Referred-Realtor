@@ -31,7 +31,7 @@ export default class SignUp extends React.Component {
 		super(props)
 		this.state={
       Uname : '' ,
-      FName : '',
+      name : '',
       LName : ' ', 
      YearOfExperience : '',
      Gender : '',
@@ -79,14 +79,14 @@ Location : '',
     console.log('create account... email:' + this.state.email);
     try {
       const user = {
-        // name: this.state.name,
+        name: this.state.name,
         email: this.state.email,
         password: this.state.password,
         avatar: this.state.avatar,
         Location : this.state.Location,
         Uname : this.state.Uname ,
-        FName : this.state.FName,
-        LName :this.state.LName, 
+        // FName : this.state.FName,
+        // LName :this.state.LName, 
     call  :  this.state.call  ,
     mail   :  this.state.mail ,
     Facebook  :   this.state.Facebook,
@@ -202,13 +202,13 @@ Location : '',
 
         <Form>
             <Item floatingLabel>
-              <Label style={styles.textFBandLog}>First Name</Label>
-              <Input onChangeText={FName => this.setState({FName})} />
+              <Label style={styles.textFBandLog}> Name</Label>
+              <Input onChangeText={name => this.setState({name})} />
             </Item>
-            <Item floatingLabel last>
+            {/* <Item floatingLabel last>
               <Label style={styles.textFBandLog}>Last Name</Label>
               <Input  onChangeText={LName => this.setState({LName})}  />
-            </Item>
+            </Item> */}
             <Item floatingLabel last>
               <Label style={styles.textFBandLog}>User Name</Label>
               <Input  onChangeText={Uname => this.setState({Uname})} />
@@ -247,6 +247,7 @@ Location : '',
                 color={"black"}
                 selectedColor={"black"}
                 style={styles.radio}
+                
 
                 // selected={true}
                 />
@@ -354,6 +355,11 @@ Location : '',
           <Button block bordered light style={styles.FbAndLogBtn} onPress={() => this.onPressCreate()}>
             <Text style={styles.textForFband}>Sign Up</Text>
           </Button>
+          <View>
+
+<Text onPress={()=>{this.props.navigation.navigate('SignIn')}} style={{  textAlign: 'center',color :'black' , marginLeft : "20%" ,marginTop : '1%' , marginBottom : '1%'  }} > Already have an Account SignIn</Text>
+
+</View>
           </View>
 
           <View>
