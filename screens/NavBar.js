@@ -16,7 +16,7 @@ import Example from './modal/model'
 import { MonoText } from '../components/StyledText';
 import Modal from "react-native-modal";
 import { Ionicons } from '@expo/vector-icons'
-
+import firebase, { database } from 'firebase';
 export default class Nav extends React.Component {
   static navigationOptions = {
     header: null,
@@ -29,6 +29,9 @@ export default class Nav extends React.Component {
 
       loading: true ,
       visibleModal: null,
+      UID : '' , 
+      Data : '' , 
+      avatar : ''
 
     }}
     renderButton = (text, onPress) => (
@@ -73,8 +76,27 @@ export default class Nav extends React.Component {
     await Expo.Font.loadAsync({
       Roboto: require("./resource/Roboto.ttf"),
       Roboto_medium: require("./resource/Roboto_medium.ttf"),
-      ...Ionicons.font,    });    this.setState({ loading: false });
-  }
+      ...Ionicons.font,    });   
+      
+      var user =  firebase.auth().currentUser
+      var UserUid = user.uid
+      console.log('user',UserUid  )
+     var that = this 
+      var userData = firebase.database().ref('users/'+UserUid).once('value').then(function(snapshot) {
+        var Data = snapshot.val()
+        console.log('Data',Data)
+        var avatar = Data.avatar
+        console.log('avatar',avatar)
+        that.setState({
+          Data : Data , 
+          avatar : avatar
+        })
+      });
+      console.log(userData)
+      this.setState({ loading: false ,UID : UserUid   });
+      // console.log('this.state.Data.avatar',this.state.Data.avatar)
+      console.log('this.state.Data',this.state)
+    }
 
 
   render() {
@@ -105,7 +127,7 @@ export default class Nav extends React.Component {
  }
 // onPress={() => navigate("Drawer")}
  >
-            <Thumbnail  source={{ uri: 'https://static1.squarespace.com/static/58c28fabdb29d6fb17c2f40f/t/5a1c1000f9619afa6a6f1325/1511788547840/Foley+circle+thumbnail.png' }}  />
+            <Thumbnail  source={{ uri: this.state.avatar }}  />
            </TouchableHighlight>
           </Left>
           <Body>
