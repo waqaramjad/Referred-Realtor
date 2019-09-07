@@ -30,8 +30,8 @@ export default class SignIn extends React.Component {
       loading: true , 
 			userEmail:'',
       userPassword:'', 
-      email: 'test3@gmail.com',
-      password: 'test123',
+      email: 'bambeggs10@hotmail.com',
+      password: '123456',
       avatar: '',
       name: '',
 
