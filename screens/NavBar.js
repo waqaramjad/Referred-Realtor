@@ -106,7 +106,7 @@ export default class Nav extends React.Component {
     console.log('this.props')
     console.log(this.props)
     const { navigate  , state} = this.props.navigation; 
-
+var that = this 
     return (
        <View>
         <Header style={styles1.mainNav}>
@@ -123,11 +123,11 @@ export default class Nav extends React.Component {
 
          
             <TouchableHighlight 
-            onPress={ () =>     navigate("Profile")
+            onPress={ () =>     navigate("Profile",{ProfilData : this.state.Data})
  }
 // onPress={() => navigate("Drawer")}
  >
-            <Thumbnail  source={{ uri: this.state.avatar }}  />
+            <Thumbnail  source={{ uri: that.state.avatar }}  />
            </TouchableHighlight>
           </Left>
           <Body>

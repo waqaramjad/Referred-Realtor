@@ -7,6 +7,8 @@ import Fstar from '../../assets/images/starFilled.png'
 import Expo from "expo";
 import gstyles from '../styles/style'
 import { Ionicons } from '@expo/vector-icons'
+// import { stat } from 'fs';
+// import console = require('console');
 
 var myUId = ''
 
@@ -36,7 +38,7 @@ export default class Profile extends Component {
     };
 
     const { state, navigate } = this.props.navigation;
-
+console.log('state.params',state.params)
     // myUId = state.params.UserId
     myThis = this
   }
@@ -62,6 +64,8 @@ export default class Profile extends Component {
   
 
       const { navigate } = this.props.navigation; 
+      console.log('this.props', this.props)
+      console.log('this.props 2')
       return (
         <Container style={styles.container}>
           {/* <Header /> */}
