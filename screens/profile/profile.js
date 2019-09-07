@@ -34,11 +34,13 @@ export default class Profile extends Component {
     
     billINfo : '' , 
     CardNo : '' , 
-    showSoundImg: true
+    showSoundImg: true , 
+    ProfileData : ''
     };
 
     const { state, navigate } = this.props.navigation;
-console.log('state.params',state.params)
+console.log('state.params',state.params.ProfilData)
+
     // myUId = state.params.UserId
     myThis = this
   }
@@ -63,7 +65,11 @@ console.log('state.params',state.params)
     render() {
   
 
-      const { navigate } = this.props.navigation; 
+      const { navigate, state } = this.props.navigation; 
+      // const { state, navigate } = this.props.navigation;
+      // console.log('state.params',state.params.ProfilData)
+      var ProfileData = state.params.ProfilData
+      
       console.log('this.props', this.props)
       console.log('this.props 2')
       return (
@@ -106,7 +112,7 @@ console.log('state.params',state.params)
     <CardItem cardBody>
               <ImageBackground source={{
                 uri:
-                 'http://www.anotherindian.com/wp-content/uploads/2017/03/d3f20dcb0c33ef8a3c2cb3b82f3eef08.jpg'}} style={{height: 200, width: null, flex: 1}}>
+                 ProfileData.avtar}} style={{height: 200, width: null, flex: 1}}>
               <Image style = {styles.logo} source = {{uri:'https://news.pg.com/sites/pg.newshq.businesswire.com/files/logo/image/2018_PGlogo.png'}} />
  
               
@@ -134,10 +140,10 @@ console.log('state.params',state.params)
             </CardItem>
             <CardItem  >
               <Body style={styles.centerContent}>
-                <Text style={{fontSize : 30}}>  Senita Zen </Text>
-                <Text> Cairo , USA </Text>
+                <Text style={{fontSize : 30}}> {ProfileData.name} </Text>
+                <Text> {ProfileData.Location} </Text>
                 <Text> Software Developer</Text>
-                <Text> 5 year experience  </Text>
+                <Text> {ProfileData.YearOfExperience} year experience  </Text>
                   {/* <Text> Billing info  : {this.state.billINfo} </Text> */}
                 {/* <Text> Credit Card No :{this.state.CardNo}   </Text> */}
                 {/* <Text> Company Name  : MS    </Text>
