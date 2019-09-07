@@ -39,7 +39,7 @@ export default class Profile extends Component {
     };
 
     const { state, navigate } = this.props.navigation;
-console.log('state.params',state.params.ProfilData)
+// console.log('state.params',state.params.ProfilData)
 
     // myUId = state.params.UserId
     myThis = this
@@ -69,7 +69,27 @@ console.log('state.params',state.params.ProfilData)
       // const { state, navigate } = this.props.navigation;
       // console.log('state.params',state.params.ProfilData)
       var ProfileData = state.params.ProfilData
+//       var ProfileData = {
+//         Uname : '' ,
+//       name : '',
+//       LName : ' ', 
+//      YearOfExperience : '',
+//      Gender : '',
+// 			email:'', 
+//       password:''	, 
+//       cnfrmPass :'',
+// Location : '',
+
+//     call  : ''   ,
+//     mail   :   '' ,
+//     Facebook  :    '',
+//     Instagram  :    '',
+//     Twitter   : '' , 
+//     Whats  : '' , 
+    
+//     avatar : 'https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png', 
       
+//       }
       console.log('this.props', this.props)
       console.log('this.props 2')
       return (
@@ -112,7 +132,8 @@ console.log('state.params',state.params.ProfilData)
     <CardItem cardBody>
               <ImageBackground source={{
                 uri:
-                 ProfileData.avtar}} style={{height: 200, width: null, flex: 1}}>
+                // 'https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png' }} style={{height: 200, width: null, flex: 1}}>
+                ProfileData.avatar }} style={{height: 200, width: null, flex: 1}}>
               <Image style = {styles.logo} source = {{uri:'https://news.pg.com/sites/pg.newshq.businesswire.com/files/logo/image/2018_PGlogo.png'}} />
  
               
@@ -157,6 +178,7 @@ console.log('state.params',state.params.ProfilData)
          {/* <Card > */}
          <Card>
            <CardItem style={{marginLeft : '30%'}}>
+
 
            <Icon active name='logo-facebook' />
            <Icon active name='logo-instagram' />
