@@ -66,12 +66,14 @@ Location : '',
       console.log('ProfileData',ProfileData.Gender)
       var Uname = ProfileData.Uname
       this.setState({
+        name : ProfileData.name ,
         YearOfExperience : ProfileData.YearOfExperience,
         Gender : ProfileData.Gender,
         email:ProfileData.email, 
         password:ProfileData.password	, 
         cnfrmPass :ProfileData.cnfrmPass,
         Location : ProfileData.Location,
+        YearOfExperience : ProfileData.YearOfExperience,
         Uname : Uname,
         call  :' ProfileData.call'   ,
         mail   :   ProfileData.mail ,
@@ -124,7 +126,8 @@ Location : '',
           
            <View >
 
-           <Thumbnail source={{ uri: 'https://girlinthegarage.net/wp-content/uploads/2015/03/IMG_4790-jen-profile-0215-round.png' }} style={styles.imageSize} />
+           {/* <Thumbnail source={{ uri: 'https://girlinthegarage.net/wp-content/uploads/2015/03/IMG_4790-jen-profile-0215-round.png' }} style={styles.imageSize} /> */}
+           <Thumbnail source={{ uri: this.state.avatar }} style={styles.imageSize} />
            </View>
            
 
@@ -153,7 +156,7 @@ Location : '',
 <Form>
             <Item fixedLabel>
               <Label>Name</Label>
-              <Input value={this.state.Name} onChangeText={Name => this.setState({Name})}/>
+              <Input value={this.state.name} onChangeText={Name => this.setState({Name})}/>
             </Item>
             <Item fixedLabel>
               <Label>Location</Label>
@@ -161,27 +164,29 @@ Location : '',
             </Item>
             <Item fixedLabel>
               <Label>Username</Label>
-              <Input value={this.state.Name} onChangeText={Name => this.setState({Name})}/>
+              <Input value={this.state.Uname} onChangeText={Name => this.setState({Name})}/>
             </Item>
             <Item fixedLabel>
               <Label>Experience</Label>
-              <Input value={this.state.Experience} onChangeText={Experience => this.setState({Experience})}/>
+              <Input value={this.state.YearOfExperience} onChangeText={Experience => this.setState({Experience})}/>
             </Item>
-            <Item fixedLabel>
-              <Label>Email Adress</Label>
-              <Input value={this.state.EmailAdress} onChangeText={EmailAdress => this.setState({EmailAdress})}/>
-            </Item>
-            <Item fixedLabel>
+            
+            {/* <Item fixedLabel>
               <Label>Company Name</Label>
               <Input value={this.state.CompanyName} onChangeText={CompanyName => this.setState({CompanyName})}/>
+            </Item> */}
+           
+            <Item fixedLabel>
+              <Label>Facebook Username</Label>
+              <Input value={this.state.Facebook} onChangeText={SnapchatUsername => this.setState({SnapchatUsername})}/>
             </Item>
             <Item fixedLabel>
-              <Label>Snapchat Username</Label>
-              <Input value={this.state.SnapchatUsername} onChangeText={SnapchatUsername => this.setState({SnapchatUsername})}/>
+              <Label>Twitter Username</Label>
+              <Input value={this.state.Twitter} onChangeText={SkypeUsername => this.setState({SkypeUsername})}/>
             </Item>
             <Item fixedLabel>
-              <Label>Skype Username</Label>
-              <Input value={this.state.SkypeUsername} onChangeText={SkypeUsername => this.setState({SkypeUsername})}/>
+              <Label>call</Label>
+              <Input value={this.state.call} onChangeText={SkypeUsername => this.setState({SkypeUsername})}/>
             </Item>
             
           </Form>

@@ -66,14 +66,11 @@ export default class Profile extends Component {
   
 
       const { navigate, state } = this.props.navigation; 
-      // const { state, navigate } = this.props.navigation;
-      // console.log('state.params',state.params.ProfilData)
-      // var ProfileData = state.params.ProfilData
       var ProfileData = {
         Uname : 'sd' ,
       name : 'asd',
       LName : 'asd ', 
-     YearOfExperience : '',
+     YearOfExperience : '7',
      Gender : 'das',
 			email:'dr', 
       password:'ert'	, 
