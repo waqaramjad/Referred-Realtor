@@ -105,6 +105,7 @@ export default class Nav extends React.Component {
     }
     console.log('this.props')
     console.log(this.props)
+    console.log('this.state',this.state)
     const { navigate  , state} = this.props.navigation; 
 var that = this 
     return (
@@ -123,7 +124,7 @@ var that = this
 
          
             <TouchableHighlight 
-            onPress={ () =>     navigate("Profile",{ProfilData : this.state.Data})
+            onPress={ () =>     navigate("Profile",{ProfileData : that.state.Data})
  }
 // onPress={() => navigate("Drawer")}
  >

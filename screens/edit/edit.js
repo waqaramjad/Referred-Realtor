@@ -4,7 +4,8 @@ import {  Item, Input ,  Accordion , Container, Header,  Icon , Content, Card, C
 import Expo from "expo";
 import gstyles from '../styles/style'
 // import console = require('console');
-
+import FirebasSvc from '../resource/FirebaseSvc'
+import firebaseSvc from '../resource/FirebaseSvc';
 var myUId = ''
 
 
@@ -87,6 +88,27 @@ Location : '',
       })
 
     }
+    upadte(){
+
+      alert('dasd')
+      const user = {
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password,
+        avatar: this.state.avatar,
+        Location : this.state.Location,
+        Uname : this.state.Uname ,
+       call  :  this.state.call  ,
+      mail   :  this.state.mail ,
+      Facebook  :   this.state.Facebook,
+      Instagram  :    this.state. Instagram,
+      Twitter   :  this.state.Twitter , 
+     Whats  :  this.state.Whats, 
+      YearOfExperience  :  this.state.YearOfExperience, 
+
+      };
+      firebaseSvc.updateProfilData(user)
+    }
     render() {
 
       const { navigate, state } = this.props.navigation; 
@@ -106,7 +128,7 @@ Location : '',
           </Left>
           <Body/>
           <Right>
-          <Button transparent   >
+          <Button transparent onPress={()=>{this.upadte()}}  >
              <Text style={{color:'white',fontSize:15 }}>Update</Text>
             </Button>
           </Right>

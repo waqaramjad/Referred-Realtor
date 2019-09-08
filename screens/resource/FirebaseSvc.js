@@ -109,6 +109,7 @@ class FirebaseSvc  {
     }
   }
 
+
   updateAvatar = (url) => {
     //await this.setState({ avatar: url });
     var userf = firebase.auth().currentUser;
@@ -179,6 +180,17 @@ class FirebaseSvc  {
     };
     return message;
   };
+
+updateProfilData=(user)=>{
+
+  // var UID = 
+
+  var UID = firebase.auth().currentUser.uid
+  console.log('UID',UID)
+  console.log('user',user)
+  firebase.database().ref('users/')
+}
+
 
   refOn = callback => {
     this.ref

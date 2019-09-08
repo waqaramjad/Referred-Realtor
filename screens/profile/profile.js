@@ -62,31 +62,36 @@ export default class Profile extends Component {
     );
   }
   
+  // update(){
+
+  // }
     render() {
   
 
       const { navigate, state } = this.props.navigation; 
-      var ProfileData = {
-        Uname : 'sd' ,
-      name : 'asd',
-      LName : 'asd ', 
-     YearOfExperience : '7',
-     Gender : 'das',
-			email:'dr', 
-      password:'ert'	, 
-      cnfrmPass :'ret',
-Location : 'ert',
+      var ProfileData = state.params.ProfileData
+      console.log('ProfileData',ProfileData)
+//       var ProfileData = {
+//         Uname : 'sd' ,
+//       name : 'asd',
+//       LName : 'asd ', 
+//      YearOfExperience : '7',
+//      Gender : 'das',
+// 			email:'dr', 
+//       password:'ert'	, 
+//       cnfrmPass :'ret',
+// Location : 'ert',
 
-    call  : 'ert'   ,
-    mail   :   'ert' ,
-    Facebook  :    'ert',
-    Instagram  :    'ert',
-    Twitter   : 'erter' , 
-    Whats  : '' , 
+//     call  : 'ert'   ,
+//     mail   :   'ert' ,
+//     Facebook  :    'ert',
+//     Instagram  :    'ert',
+//     Twitter   : 'erter' , 
+//     Whats  : '' , 
     
-    avatar : 'https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png', 
+//     avatar : 'https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png', 
       
-      }
+//       }
       console.log('this.props', this.props)
       console.log('this.props 2')
       return (
