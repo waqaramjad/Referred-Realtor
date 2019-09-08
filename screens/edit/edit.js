@@ -35,7 +35,7 @@ export default class Edit extends Component {
     password:''	, 
     cnfrmPass :'',
 Location : '',
-
+uname : '',
   call  : ''   ,
   mail   :   '' ,
   Facebook  :    '',
@@ -178,7 +178,7 @@ Location : '',
 <Form>
             <Item fixedLabel>
               <Label>Name</Label>
-              <Input value={this.state.name} onChangeText={Name => this.setState({Name})}/>
+              <Input value={this.state.name} onChangeText={name => this.setState({name})}/>
             </Item>
             <Item fixedLabel>
               <Label>Location</Label>
@@ -186,11 +186,11 @@ Location : '',
             </Item>
             <Item fixedLabel>
               <Label>Username</Label>
-              <Input value={this.state.Uname} onChangeText={Name => this.setState({Name})}/>
+              <Input value={this.state.uname} onChangeText={uname => this.setState({uname})}/>
             </Item>
             <Item fixedLabel>
               <Label>Experience</Label>
-              <Input value={this.state.YearOfExperience} onChangeText={Experience => this.setState({Experience})}/>
+              <Input value={this.state.YearOfExperience} onChangeText={YearOfExperience => this.setState({YearOfExperience})}/>
             </Item>
             
             {/* <Item fixedLabel>
@@ -200,15 +200,15 @@ Location : '',
            
             <Item fixedLabel>
               <Label>Facebook Username</Label>
-              <Input value={this.state.Facebook} onChangeText={SnapchatUsername => this.setState({SnapchatUsername})}/>
+              <Input value={this.state.Facebook} onChangeText={Facebook => this.setState({Facebook})}/>
             </Item>
             <Item fixedLabel>
               <Label>Twitter Username</Label>
-              <Input value={this.state.Twitter} onChangeText={SkypeUsername => this.setState({SkypeUsername})}/>
+              <Input value={this.state.Twitter} onChangeText={Twitter => this.setState({Twitter})}/>
             </Item>
             <Item fixedLabel>
               <Label>call</Label>
-              <Input value={this.state.call} onChangeText={SkypeUsername => this.setState({SkypeUsername})}/>
+              <Input value={this.state.call} onChangeText={call => this.setState({call})}/>
             </Item>
             
           </Form>

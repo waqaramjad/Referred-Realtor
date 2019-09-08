@@ -188,7 +188,8 @@ updateProfilData=(user)=>{
   var UID = firebase.auth().currentUser.uid
   console.log('UID',UID)
   console.log('user',user)
-  firebase.database().ref('users/')
+  firebase.database().ref('users/'+UID).update(user)
+alert('Profile Updated ')
 }
 
 
