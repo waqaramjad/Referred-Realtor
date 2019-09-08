@@ -68,28 +68,28 @@ export default class Profile extends Component {
       const { navigate, state } = this.props.navigation; 
       // const { state, navigate } = this.props.navigation;
       // console.log('state.params',state.params.ProfilData)
-      var ProfileData = state.params.ProfilData
-//       var ProfileData = {
-//         Uname : '' ,
-//       name : '',
-//       LName : ' ', 
-//      YearOfExperience : '',
-//      Gender : '',
-// 			email:'', 
-//       password:''	, 
-//       cnfrmPass :'',
-// Location : '',
+      // var ProfileData = state.params.ProfilData
+      var ProfileData = {
+        Uname : 'sd' ,
+      name : 'asd',
+      LName : 'asd ', 
+     YearOfExperience : '',
+     Gender : 'das',
+			email:'dr', 
+      password:'ert'	, 
+      cnfrmPass :'ret',
+Location : 'ert',
 
-//     call  : ''   ,
-//     mail   :   '' ,
-//     Facebook  :    '',
-//     Instagram  :    '',
-//     Twitter   : '' , 
-//     Whats  : '' , 
+    call  : 'ert'   ,
+    mail   :   'ert' ,
+    Facebook  :    'ert',
+    Instagram  :    'ert',
+    Twitter   : 'erter' , 
+    Whats  : '' , 
     
-//     avatar : 'https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png', 
+    avatar : 'https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png', 
       
-//       }
+      }
       console.log('this.props', this.props)
       console.log('this.props 2')
       return (
@@ -105,7 +105,7 @@ export default class Profile extends Component {
           </Left>
           <Body/>
           <Right>
-          <Button transparent  onPress={()=>{navigate("Edit")}} >
+          <Button transparent  onPress={()=>{navigate("Edit", {ProfileData:ProfileData})}} >
              <Text style={{color:'white',fontSize:15 }}>Edit</Text>
             </Button>
             <Tooltip popover={<Text>Flag as inappropriate</Text>}
@@ -198,7 +198,7 @@ export default class Profile extends Component {
 </Left>
 <Right>
    
-                <Text> Senita Zen   </Text>
+                <Text> {ProfileData.name}  </Text>
                 <Text> Software Developer  </Text> 
 </Right>
 </CardItem>

@@ -3,6 +3,7 @@ import { StyleSheet, View,AppRegistry, FlatList,  TouchableOpacity, Dimensions, 
 import {  Item, Input ,  Accordion , Container, Header,  Icon , Content, Card, CardItem,Right,Thumbnail ,  Left ,  Title ,   Button ,  Body , Form, Label} from "native-base";
 import Expo from "expo";
 import gstyles from '../styles/style'
+// import console = require('console');
 
 var myUId = ''
 
@@ -15,14 +16,34 @@ export default class Edit extends Component {
     super(props);
     this.state = {
     loading: true , 
-    Name: ' Senita Zen',
-    Location: ' Canada',
-    Experience: '  8 years',
-    EmailAdress: ' xyz@gmail.com',
-    CompanyName: ' MS',
-    SnapchatUsername: 'Senita345',
-    SkypeUsername: 'Senita345',
+    // Name: ' Senita Zen',
+    // Location: ' Canada',
+    // Experience: '  8 years',
+    // EmailAdress: ' xyz@gmail.com',
+    // CompanyName: ' MS',
+    // SnapchatUsername: 'Senita345',
+    // SkypeUsername: 'Senita345',
     // Name: ' ',
+
+    Uname : '' ,
+    name : '',
+    LName : ' ', 
+   YearOfExperience : '',
+   Gender : '',
+    email:'', 
+    password:''	, 
+    cnfrmPass :'',
+Location : '',
+
+  call  : ''   ,
+  mail   :   '' ,
+  Facebook  :    '',
+  Instagram  :    '',
+  Twitter   : '' , 
+  Whats  : '' , 
+  
+  avatar : ' https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png', 
+
     };
 
     const { state, navigate } = this.props.navigation;
@@ -33,12 +54,44 @@ export default class Edit extends Component {
     await Expo.Font.loadAsync({
       Roboto: require("../resource/Roboto.ttf"),
       Roboto_medium: require("../resource/Roboto_medium.ttf"),
-      ...Ionicons.font,    });    this.setState({ loading: false });
-  }
+      ...Ionicons.font,    });   
+       this.setState({ loading: false });
+      const { state, navigate } = this.props.navigation;
+    }
+    componentDidMount(){
+
+      const { state, navigate } = this.props.navigation;
+
+      var ProfileData = state.params.ProfileData
+      console.log('ProfileData',ProfileData.Gender)
+      var Uname = ProfileData.Uname
+      this.setState({
+        YearOfExperience : ProfileData.YearOfExperience,
+        Gender : ProfileData.Gender,
+        email:ProfileData.email, 
+        password:ProfileData.password	, 
+        cnfrmPass :ProfileData.cnfrmPass,
+        Location : ProfileData.Location,
+        Uname : Uname,
+        call  :' ProfileData.call'   ,
+        mail   :   ProfileData.mail ,
+        Facebook  :    ProfileData.Facebook,
+        Instagram  :    ProfileData.Instagram,
+        Twitter   : ProfileData.Twitter , 
+        Whats  : ProfileData.Whats , 
+        
+        avatar : ProfileData.avatar, 
+        
+      })
+
+    }
     render() {
 
-      const { navigate } = this.props.navigation; 
-      return (
+      const { navigate, state } = this.props.navigation; 
+    //  console.log('state.params',state.params)
+     console.log('this.state',this.state)
+
+     return (
         <Container style={styles.container}>
           {/* <Header /> */}
           <Header style = {gstyles.mainNav}>

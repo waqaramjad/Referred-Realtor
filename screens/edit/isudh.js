@@ -1,0 +1,18 @@
+Uname : ProfileData. ,
+name : ProfileData.,
+LName : ' ', 
+YearOfExperience : ProfileData.,
+Gender : ProfileData.,
+email:ProfileData., 
+password:ProfileData.	, 
+cnfrmPass :ProfileData.,
+Location : ProfileData.,
+
+call  : ProfileData.   ,
+mail   :   ProfileData. ,
+Facebook  :    ProfileData.,
+Instagram  :    ProfileData.,
+Twitter   : ProfileData. , 
+Whats  : ProfileData. , 
+
+avatar : ' https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png', 
