@@ -1,6 +1,7 @@
 import firebase from 'firebase';
 import uuid from 'uuid';
 import {AsyncStorage} from 'react-native';
+import { Constants, ImagePicker, Permissions } from 'expo';
 
 const config = {
   apiKey: "AIzaSyDcyZcVQP8nuHcMJsKd5wHxoaerUW6apZQ",
@@ -86,11 +87,14 @@ class FirebaseSvc  {
   uploadImage = async uri => {
     console.log('got image to upload. uri:' + uri);
     try {
+
+      
       const response = await fetch(uri);
       const blob = await response.blob();
+
       const ref = firebase
         .storage()
-        .ref('avatar')
+        .ref('avatar1')
         .child(uuid.v4());
       const task = ref.put(blob);
     
@@ -198,6 +202,46 @@ alert('Profile Updated ')
       .limitToLast(20)
       .on('child_added', snapshot => callback(firebaseSvc.parse(snapshot)));
   }
+
+  async  uploadImageAsync(name)  {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: true,
+      aspect: [4, 3],
+    });
+    var uri = result.uri
+    console.log(result.uri)
+  console.log('done ')
+  const blob = await new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+      resolve(xhr.response); // when BlobModule finishes reading, resolve with the blob
+   };
+   xhr.onerror = function() {
+     reject(new TypeError('Network request failed')); // error occurred, rejecting
+   };
+   xhr.responseType = 'blob'; // use BlobModule's UriHandler
+   xhr.open('GET', uri, true); // fetch the blob from uri in async mode
+   xhr.send(null); // no initial data
+ });
+
+// do something with the blob, eg. upload it to firebase (API v5.6.0 below)
+const ref = firebase
+  .storage()
+  .ref()
+  .child(name);
+  // .child(uuid.v4());
+const snapshot = await ref.put(blob);
+const remoteUri = await snapshot.ref.getDownloadURL();
+ AsyncStorage.setItem('myData',remoteUri );
+console.log(remoteUri)
+// when we're done sending it, close and release the blob
+//  alert('myadat ',a)
+blob.close();
+
+// return the result, eg. remote URI to the image
+return remoteUri
+}
+
 
   get timestamp() {
     return firebase.database.ServerValue.TIMESTAMP;

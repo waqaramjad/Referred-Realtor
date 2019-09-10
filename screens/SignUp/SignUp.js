@@ -50,7 +50,7 @@ Location : '',
     avatar : ' https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png', 
       loading: true , 
       hasCameraPermission: null,
-     		
+     	imageLink	:''
     }
     
     const { state, navigate } = this.props.navigation;
@@ -61,6 +61,7 @@ Location : '',
       Roboto: require("../resource/Roboto.ttf"),
       Roboto_medium: require("../resource/Roboto_medium.ttf"),
       ...Ionicons.font,    });
+
           this.setState({ loading: false });
   }
 
@@ -73,6 +74,26 @@ Location : '',
     console.log(navigate)
 
 
+  }
+  uploadImage = async () => {
+
+    // alert('sdf')
+    let result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: true,
+      aspect: [4, 3],
+    });
+    var uri = result.uri
+    console.log(result.uri)
+    const response = await fetch(uri);
+    console.log('response',response)
+    const blob = await response.blob();
+  // var projectNameText = this.state.projectNameText
+    // var ref = firebase.storage().ref().child(myUId+'/'+projectNameText+'/'+imageName).then(()=>{
+      console.log('blob',blob)
+    var ref = firebase.storage().ref().child('test/test.jpg')
+  console.log('ref',ref)
+    var a =  ref.put(blob);
+    console.log('a',a)
   }
 
   onPressCreate = async () => {
@@ -114,9 +135,93 @@ Location : '',
     }
   };
 
+
+
+  
   onChangeTextEmail = email => this.setState({ email });
   onChangeTextPassword = password => this.setState({ password });
   onChangeTextName = name => this.setState({ name });
+
+    // uploadImageAsync= async(uri) =>  {
+uploadImageLinkFunction(name){
+  var UID = firebase.auth().currentUser.uid
+
+  if(name!=null){
+    var PicName = UID+ name
+   var CompanyURL  =  firebaseSvc.uploadImageAsync(PicName)
+    console.log('CompanyURL',CompanyURL)
+    // var storage = firebase.storage();
+    // var pathReference = storage.ref();
+    // pathReference.child(CompanyURL).getDownloadURL().then(function(url) {
+    //   // `url` is the download URL for 'images/stars.jpg'
+    
+    //   // This can be downloaded directly:
+    //   console.log('url',url)
+    //   var xhr = new XMLHttpRequest();
+    //   xhr.responseType = 'blob';
+    //   xhr.onload = function(event) {
+    //     var blob = xhr.response;
+    //   };
+    //   xhr.open('GET', url);
+    //   xhr.send();
+    
+    //   // Or inserted into an <img> element:
+    //   var img = document.getElementById('myimg');
+    //   img.src = url;
+    // }).catch(function(error) {
+    //   // Handle any errors
+    // });
+  }
+  else{
+    var ProfileURL =  firebaseSvc.uploadImageAsync(UID)
+    console.log(ProfileURL)
+
+  }
+var that = this
+  var a =  AsyncStorage.getItem('myData').then((value)=>{
+    that.setState({
+      imageLink :value
+    })
+  })
+ alert(this.state.imageLink)
+}
+
+      async  uploadImageAsync()  {
+        let result = await ImagePicker.launchImageLibraryAsync({
+          allowsEditing: true,
+          aspect: [4, 3],
+        });
+        var uri = result.uri
+        console.log(result.uri)
+      console.log('done ')
+      const blob = await new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.onload = function() {
+          resolve(xhr.response); // when BlobModule finishes reading, resolve with the blob
+       };
+       xhr.onerror = function() {
+         reject(new TypeError('Network request failed')); // error occurred, rejecting
+       };
+       xhr.responseType = 'blob'; // use BlobModule's UriHandler
+       xhr.open('GET', uri, true); // fetch the blob from uri in async mode
+       xhr.send(null); // no initial data
+     });
+  
+    // do something with the blob, eg. upload it to firebase (API v5.6.0 below)
+    const ref = firebase
+      .storage()
+      .ref()
+      .child(uuid.v4());
+    const snapshot = await ref.put(blob);
+    const remoteUri = await snapshot.ref.getDownloadURL();
+  
+    // when we're done sending it, close and release the blob
+    blob.close();
+  
+    // return the result, eg. remote URI to the image
+    return remoteUri;
+  }
+
 
   onImageUpload = async () => {
     const { status: cameraRollPerm } = await Permissions.askAsync(
@@ -126,7 +231,7 @@ Location : '',
       try {
         // only if user allows permission to camera roll
         // alert('NT done')
-        alert(this.state.hasCameraPermission)
+        // alert(this.state.hasCameraPermission)
         if (cameraRollPerm === 'granted') {
           // alert('done')
         console.log('choosing image granted...');
@@ -163,7 +268,9 @@ Location : '',
           () => reject(),
           );
         });
-        let uploadUrl = await firebaseSvc.uploadImage(resizedUri);
+        // let uploadUrl = await firebaseSvc.uploadImage(resizedUri);
+        let uploadUrl = await this.uploadImageAsync(uri)
+        console.log('uploadUrl',uploadUrl)
         //let uploadUrl = await firebaseSvc.uploadImageAsync(resizedUri);
          this.setState({ avatar: uploadUrl });
         console.log(" - await upload successful url:" + uploadUrl);
@@ -355,6 +462,19 @@ Location : '',
           <Button block bordered light style={styles.FbAndLogBtn} onPress={() => this.onPressCreate()}>
             <Text style={styles.textForFband}>Sign Up</Text>
           </Button>
+          {/* <Button block bordered  style={styles.FbAndLogBtn} onPress={() => this.onImageUpload()}> */}
+          <Button block bordered  style={styles.FbAndLogBtn} onPress={() =>this.uploadImageLinkFunction(null)
+    
+     }
+      >
+            <Text style={styles.textForFband}> Profile Picture upload </Text>
+          </Button>
+          <Button block bordered  style={styles.FbAndLogBtn} onPress={() =>this.uploadImageLinkFunction('Company')
+    
+     }
+      >
+            <Text style={styles.textForFband}>Company Picture upload </Text>
+          </Button>
           <View>
 
 <Text onPress={()=>{this.props.navigation.navigate('SignIn')}} style={{  textAlign: 'center',color :'black' , marginLeft : "20%" ,marginTop : '1%' , marginBottom : '1%'  }} > Already have an Account SignIn</Text>
@@ -366,7 +486,7 @@ Location : '',
             {/* <View>
 
             <Text style={{  textAlign: 'center',color :'white' , marginLeft : "20%" ,marginTop : '3%' , marginBottom : '6%'  }} >New User ? Sign Up</Text>
-            </View> */}
+             </View> */}
             {/* <Button block  style={{ backgroundColor : 'white'}} onPress={()=>{navigate("tab")}}>
             <Text style={{color : '#65c296' , backgroundColor : 'white'}}>Facebook</Text>
           </Button> */}
