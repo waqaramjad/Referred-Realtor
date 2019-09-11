@@ -232,14 +232,14 @@ const ref = firebase
   // .child(uuid.v4());
 const snapshot = await ref.put(blob);
 const remoteUri = await snapshot.ref.getDownloadURL();
- AsyncStorage.setItem('myData',remoteUri );
+ await AsyncStorage.setItem('myData',remoteUri );
 console.log(remoteUri)
 // when we're done sending it, close and release the blob
 //  alert('myadat ',a)
 blob.close();
 
 // return the result, eg. remote URI to the image
-return remoteUri
+// return remoteUri
 }
 
 

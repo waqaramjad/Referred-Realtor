@@ -13,6 +13,8 @@ import { Container, Header, Left, Body,Form, Item, Input, Label ,CheckBox, Right
 import { Ionicons } from '@expo/vector-icons'
 import firebase, { database } from 'firebase';
 import { Constants, ImagePicker, Permissions } from 'expo';
+import {AsyncStorage} from 'react-native';
+
 import {
   ImageEditor,
 } from 'react-native';
@@ -96,9 +98,30 @@ Location : '',
     console.log('a',a)
   }
 
+  setImageValue(){
+    var that =  this
+
+    AsyncStorage.getItem('myData').then((value)=>{
+      console.log('value',value)
+       that.setState({
+         imageLink :value
+       })
+       console.log('that.state.imageLink',that.state.imageLink)
+     })
+    setTimeout(function(){
+ 
+      //Put All Your Code Here, Which You Want To Execute After Some Delay Time.
+      that.onPressCreate()
+    }, 2000)
+  }
   onPressCreate = async () => {
     console.log('create account... email:' + this.state.email);
     try {
+      
+ 
+  // console.log('that.state.imageLink',that.state.imageLink)
+
+  console.log(this.state)
       const user = {
         name: this.state.name,
         email: this.state.email,
@@ -178,48 +201,50 @@ uploadImageLinkFunction(name){
 
   }
 var that = this
-  var a =  AsyncStorage.getItem('myData').then((value)=>{
-    that.setState({
-      imageLink :value
-    })
-  })
- alert(this.state.imageLink)
+  // var a =  AsyncStorage.getItem('myData').then((value)=>{
+  //  console.log('value',value)
+  //   that.setState({
+  //     imageLink :value
+  //   })
+  // })
+  console.log('this.state.imageLink',this.state.imageLink)
+//  alert(this.state.imageLink)
 }
 
       async  uploadImageAsync()  {
-        let result = await ImagePicker.launchImageLibraryAsync({
-          allowsEditing: true,
-          aspect: [4, 3],
-        });
-        var uri = result.uri
-        console.log(result.uri)
-      console.log('done ')
-      const blob = await new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.onload = function() {
-          resolve(xhr.response); // when BlobModule finishes reading, resolve with the blob
-       };
-       xhr.onerror = function() {
-         reject(new TypeError('Network request failed')); // error occurred, rejecting
-       };
-       xhr.responseType = 'blob'; // use BlobModule's UriHandler
-       xhr.open('GET', uri, true); // fetch the blob from uri in async mode
-       xhr.send(null); // no initial data
-     });
+    //     let result = await ImagePicker.launchImageLibraryAsync({
+    //       allowsEditing: true,
+    //       aspect: [4, 3],
+    //     });
+    //     var uri = result.uri
+    //     console.log(result.uri)
+    //   console.log('done ')
+    //   const blob = await new Promise((resolve, reject) => {
+    //     const xhr = new XMLHttpRequest();
+    //     xhr.onload = function() {
+    //       resolve(xhr.response); // when BlobModule finishes reading, resolve with the blob
+    //    };
+    //    xhr.onerror = function() {
+    //      reject(new TypeError('Network request failed')); // error occurred, rejecting
+    //    };
+    //    xhr.responseType = 'blob'; // use BlobModule's UriHandler
+    //    xhr.open('GET', uri, true); // fetch the blob from uri in async mode
+    //    xhr.send(null); // no initial data
+    //  });
   
-    // do something with the blob, eg. upload it to firebase (API v5.6.0 below)
-    const ref = firebase
-      .storage()
-      .ref()
-      .child(uuid.v4());
-    const snapshot = await ref.put(blob);
-    const remoteUri = await snapshot.ref.getDownloadURL();
+    // // do something with the blob, eg. upload it to firebase (API v5.6.0 below)
+    // const ref = firebase
+    //   .storage()
+    //   .ref()
+    //   .child(uuid.v4());
+    // const snapshot = await ref.put(blob);
+    // const remoteUri = await snapshot.ref.getDownloadURL();
   
-    // when we're done sending it, close and release the blob
-    blob.close();
+    // // when we're done sending it, close and release the blob
+    // blob.close();
   
-    // return the result, eg. remote URI to the image
-    return remoteUri;
+    // // return the result, eg. remote URI to the image
+    // return remoteUri;
   }
 
 
@@ -459,7 +484,7 @@ var that = this
           <Text style={{justifyContent: "flex-end" , textAlign: 'right' , marginRight : '6%', color :'white'}}>Forget Password</Text>
       <View style={{marginTop : '15%'}} >
 
-          <Button block bordered light style={styles.FbAndLogBtn} onPress={() => this.onPressCreate()}>
+          <Button block bordered light style={styles.FbAndLogBtn} onPress={() => this.setImageValue()}>
             <Text style={styles.textForFband}>Sign Up</Text>
           </Button>
           {/* <Button block bordered  style={styles.FbAndLogBtn} onPress={() => this.onImageUpload()}> */}
