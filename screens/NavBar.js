@@ -85,7 +85,7 @@ export default class Nav extends React.Component {
       var userData = firebase.database().ref('users/'+UserUid).once('value').then(function(snapshot) {
         var Data = snapshot.val()
         console.log('Data',Data)
-        var avatar = Data.avatar
+        var avatar = Data.ProfileLink
         console.log('avatar',avatar)
         that.setState({
           Data : Data , 

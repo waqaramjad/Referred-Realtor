@@ -135,8 +135,8 @@ export default class Profile extends Component {
               <ImageBackground source={{
                 uri:
                 // 'https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png' }} style={{height: 200, width: null, flex: 1}}>
-                ProfileData.avatar }} style={{height: 200, width: null, flex: 1}}>
-              <Image style = {styles.logo} source = {{uri:'https://news.pg.com/sites/pg.newshq.businesswire.com/files/logo/image/2018_PGlogo.png'}} />
+                ProfileData.ProfileLink }} style={{height: 200, width: null, flex: 1}}>
+              <Image style = {styles.logo} source = {{uri:ProfileData.CompanyLink}} />
  
               
               </ImageBackground>

@@ -148,6 +148,8 @@ Location : '',
     Twitter   :  this.state.Twitter , 
     Whats  :  this.state.Whats, 
     YearOfExperience  :  this.state.YearOfExperience, 
+    ProfileLink : this.state.ProfileLink , 
+    CompanyLink  : this.state.CompanyLink
 
       };
 
