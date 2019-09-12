@@ -84,6 +84,8 @@ uname : '',
         Whats  : ProfileData.Whats , 
         
         avatar : ProfileData.avatar, 
+        ProfileLink : ProfileData.ProfileLink , 
+        CompanyLink : ProfileData.CompanyLink
         
       })
 
@@ -149,7 +151,7 @@ uname : '',
            <View >
 
            {/* <Thumbnail source={{ uri: 'https://girlinthegarage.net/wp-content/uploads/2015/03/IMG_4790-jen-profile-0215-round.png' }} style={styles.imageSize} /> */}
-           <Thumbnail source={{ uri: this.state.avatar }} style={styles.imageSize} />
+           <Thumbnail source={{ uri: this.state.ProfileLink }} style={styles.imageSize} />
            </View>
            
 

@@ -136,7 +136,7 @@ export default class Profile extends Component {
                 uri:
                 // 'https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png' }} style={{height: 200, width: null, flex: 1}}>
                 ProfileData.ProfileLink }} style={{height: 200, width: null, flex: 1}}>
-              <Image style = {styles.logo} source = {{uri:ProfileData.CompanyLink}} />
+              <Thumbnail style = {styles.logo} source = {{uri:ProfileData.CompanyLink}} />
  
               
               </ImageBackground>
