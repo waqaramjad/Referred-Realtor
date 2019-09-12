@@ -92,10 +92,11 @@ class FirebaseSvc  {
       const response = await fetch(uri);
       const blob = await response.blob();
 
+      let imageName = uuid.v4()
       const ref = firebase
         .storage()
         .ref('avatar1')
-        .child(uuid.v4());
+        .child(imageName);
       const task = ref.put(blob);
     
       return new Promise((resolve, reject) => {
@@ -211,6 +212,8 @@ alert('Profile Updated ')
     var uri = result.uri
     console.log(result.uri)
   console.log('done ')
+  let imageName = uuid.v4()
+
   const blob = await new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.onload = function() {
@@ -228,11 +231,16 @@ alert('Profile Updated ')
 const ref = firebase
   .storage()
   .ref()
-  .child(name);
+  .child(name+'/'+imageName);
   // .child(uuid.v4());
 const snapshot = await ref.put(blob);
 const remoteUri = await snapshot.ref.getDownloadURL();
- await AsyncStorage.setItem('myData',remoteUri );
+let imageObject = {
+  url : remoteUri , 
+  imageType : name
+}
+// console.log(name,imageObject)
+await AsyncStorage.setItem(name,remoteUri );
 console.log(remoteUri)
 // when we're done sending it, close and release the blob
 //  alert('myadat ',a)

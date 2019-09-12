@@ -52,7 +52,9 @@ Location : '',
     avatar : ' https://www.pngfind.com/pngs/m/488-4887957_facebook-teerasej-profile-ball-circle-circular-profile-picture.png', 
       loading: true , 
       hasCameraPermission: null,
-     	imageLink	:''
+       imageLink	:'' , 
+       ProfileLink : '',
+       CompanyLink :''
     }
     
     const { state, navigate } = this.props.navigation;
@@ -101,12 +103,19 @@ Location : '',
   setImageValue(){
     var that =  this
 
-    AsyncStorage.getItem('myData').then((value)=>{
+    AsyncStorage.getItem('Profile').then((value)=>{
       console.log('value',value)
        that.setState({
-         imageLink :value
+        ProfileLink :value
        })
-       console.log('that.state.imageLink',that.state.imageLink)
+       })
+      
+    AsyncStorage.getItem('Company').then((value)=>{
+      console.log('value',value)
+       that.setState({
+         CompanyLink :value
+       })
+      //  console.log('that.state.imageLink',that.state.imageLink)
      })
     setTimeout(function(){
  
@@ -114,6 +123,7 @@ Location : '',
       that.onPressCreate()
     }, 2000)
   }
+// }
   onPressCreate = async () => {
     console.log('create account... email:' + this.state.email);
     try {
@@ -171,7 +181,7 @@ uploadImageLinkFunction(name){
 
   if(name!=null){
     var PicName = UID+ name
-   var CompanyURL  =  firebaseSvc.uploadImageAsync(PicName)
+   var CompanyURL  =  firebaseSvc.uploadImageAsync('Company')
     console.log('CompanyURL',CompanyURL)
     // var storage = firebase.storage();
     // var pathReference = storage.ref();
@@ -196,7 +206,7 @@ uploadImageLinkFunction(name){
     // });
   }
   else{
-    var ProfileURL =  firebaseSvc.uploadImageAsync(UID)
+    var ProfileURL =  firebaseSvc.uploadImageAsync('Profile')
     console.log(ProfileURL)
 
   }
